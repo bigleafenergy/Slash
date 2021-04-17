@@ -8,6 +8,7 @@
     <view class="selected">SHARING</view>
     <view class = "unselected" bindtap="switchToLearning" >LEARNING</view>  
 </view>
+<!-- <view class="space"></view> -->
 
 
 
@@ -28,7 +29,7 @@
   {{label.name}}
 </view> -->
 
-
+<view class="space"></view>
 <view class="background" >
             <view class = "cards" wx:for="{{skillsWithLabel}}" wx:for-item="skillpost">
                 <view class="nav">
