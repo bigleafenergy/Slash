@@ -169,16 +169,16 @@ Page({
          skillsWithLabel: res.data.objects
         })
 
-        this.data.skillsWithLabel.forEach((post) => {
-          console.log(post.available_time)
-          if (post.available_time.length == 2) {
-            post.avai_weekday = "All week"
-            console.log("week", post.avai_weekday)
-          } else if (post.available_time.length == 3 ) {
-            post.avai_weekday = "Weekend"
-            console.log(post.avai_weekday)
-          }
-        })
+        // this.data.skillsWithLabel.forEach((post) => {
+        //   console.log(post.available_time)
+        //   if (post.available_time.length == 2) {
+        //     post.avai_weekday = "All week"
+        //     console.log("week", post.avai_weekday)
+        //   } else if (post.available_time.length == 3 ) {
+        //     post.avai_weekday = "Weekend"
+        //     console.log(post.avai_weekday)
+        //   }
+        // })
 
       })
 
