@@ -1,4 +1,5 @@
 {
+  "setting": {},
   "condition": {
     "plugin": {
       "list": []
@@ -14,6 +15,18 @@
         {
           "name": "pages/signup/signup",
           "pathName": "pages/signup/signup",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/community/community",
+          "pathName": "pages/community/community",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/newskill/newskill",
+          "pathName": "pages/newskill/newskill",
           "scene": null
         }
       ]
