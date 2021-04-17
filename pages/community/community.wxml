@@ -1,12 +1,32 @@
 <!--pages/community/community.wxml-->
-
-<view class = "sharing" bindtap="switchToSharing">SHARING / </view>
-<view class = "learning" bindtap="switchToLearning">LEARNING</view>
-
-
-<view class = "labels" bindtap="switchToLabel" wx:for="{{labels}}" wx:for-item="label" data-label_id= "{{label.id}}">
-  {{label.name}}
+<view class = "title" >What people around you are</view>
+<view wx:if="{{share == 0}}" >
+    <view class="unselected"  bindtap="switchToSharing" >SHARING</view>
+    <view class = "selected">LEARNING</view>  
 </view>
+<view wx:if="{{share == 1}}" >
+    <view class="selected">SHARING</view>
+    <view class = "unselected" bindtap="switchToLearning" >LEARNING</view>  
+</view>
+
+
+
+<view class="labels-selected" wx:for="{{labels}}" wx:if="{{item.selected}}">{{item.name}}
+              <view class="single-label-selected" data-index="{{index}}" bindtap="resetLabel"> 
+                <image style="height: 16px; width: 16px" src="/pages/images/icon-x.svg"></image> 
+              </view>
+            </view>
+            <!-- <block wx:else> -->
+              <view class="labels" wx:for="{{labels}}" wx:for-item="label" wx:if="{{!label.selected}}" bindtap="chooseLabel" data-name="{{label}}" data-index="{{index}}"> 
+                {{label.name}}
+              </view>
+            <!-- </block> -->
+
+
+
+<!-- <view class = "labels" bindtap="switchToLabel" wx:for="{{labels}}" wx:for-item="label" data-label_name= "{{label.name}}">
+  {{label.name}}
+</view> -->
 
 
 <view class="background" >
@@ -19,15 +39,17 @@
                     <view class="card card-text">
                         <view class="card-title">{{skillpost.title_skills}}</view>
                         <view class="card-content">{{skillpost.description_offer}}</view>
+                        <!-- <view class="card-content">{{skillpost.avai_weekday}}</view> -->
+
                         
                         <view class="card-bottom">
                             <view>
                                 <image src="../pageimage/see.png"></image>
-                                <text>{{skillpost.count_view}}</text>
+                                <text>20</text>
                             </view>
                             <view>
                                 <image src="../pageimage/comment.png"></image>
-                                <text>{{post.commentLen}}</text>
+                                <text>30</text>
                             </view>
                             <view>
                                 <image src="../pageimage/like.png"></image>
