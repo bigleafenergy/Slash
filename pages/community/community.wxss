@@ -1,4 +1,17 @@
 /* pages/community/community.wxss */
+.title {
+  font-size: 24px;
+  color: #000;
+  font-weight: bold;
+  margin-top: 18rpx;
+  margin-left: 10px;
+  z-index: 100;
+}
+
+.subtitle {
+  display: flex;
+}
+
 
 .nav {
   position: relative;
@@ -34,6 +47,7 @@
   align-self: center;
   margin-left: auto;
   margin-right: auto;
+  border-radius: 50px;
 }
 
 .card-text {
@@ -143,18 +157,19 @@ padding: 0px 24px;
 
 .unselected {
   font-weight: 700;
-  font-size: 28rpx;
+  font-size: 24px;
   display: -webkit-box;
   -webkit-line-clamp: 1;
   overflow: hidden;
   text-overflow: ellipsis;
   margin-top: 20rpx;
   margin-left: 20rpx;
+  display: flex;
 }
 
 .selected {
   font-weight: 700;
-  font-size: 28rpx;
+  font-size: 24px;
   color: #C4BBDD;
   display: -webkit-box;
   -webkit-line-clamp: 1;
@@ -162,4 +177,5 @@ padding: 0px 24px;
   text-overflow: ellipsis;
   margin-top: 20rpx;
   margin-left: 20rpx;
+  display: flex;
 }
