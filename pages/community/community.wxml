@@ -2,10 +2,12 @@
 <view class = "title" >What people around you are</view>
     <view class = "subtitle" wx:if="{{share == 0}}" >
         <view class="unselected"  bindtap="switchToSharing" >SHARING</view>
+        <view class="unselected" > / </view>
         <view class = "selected">LEARNING</view>  
     </view>
     <view class = "subtitle" wx:if="{{share == 1}}" >
         <view class="selected">SHARING</view>
+        <view class="unselected" > / </view>
         <view class = "unselected" bindtap="switchToLearning" >LEARNING</view>  
     </view>
 
