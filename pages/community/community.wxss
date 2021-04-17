@@ -87,3 +87,80 @@
 .card-bottom text {
   line-height: 35rpx;
 }
+
+
+.labels {
+  font-family: 'Poppins';
+  background-color: #EFEFE6;
+  border-radius: 15px;
+  border: 1px solid #000000;
+  line-height: 28px;
+  font-size: 16px;
+  display: inline-flex;
+  padding: 0 16rpx;
+  margin-inline: 8rpx;
+  margin-top: 8rpx;
+  width: fit-content;
+}
+
+.labels-selected {
+  font-family: 'Poppins';
+  background-color: #C4BBDD;
+  font-weight: bold;
+  border-radius: 15px;
+  border: 1px solid #000000;
+  line-height: 28px;
+  font-size: 16px;
+  display: inline-flex;
+  padding: 0 16rpx;
+  margin-inline: 8rpx;
+  width: fit-content;
+}
+
+.single-label-selected {
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+}
+
+.labels-selected image {
+margin-top: 4rpx;
+}
+
+.primary-button {
+background: #111111;
+border-radius: 20px;
+width: 150px;
+height: 40px;
+color: #fff;
+font-weight: 600;
+font-size: 16px;
+line-height: 24px;
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px 24px;
+}
+
+.unselected {
+  font-weight: 700;
+  font-size: 28rpx;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 20rpx;
+  margin-left: 20rpx;
+}
+
+.selected {
+  font-weight: 700;
+  font-size: 28rpx;
+  color: #C4BBDD;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 20rpx;
+  margin-left: 20rpx;
+}
