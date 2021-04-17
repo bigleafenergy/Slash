@@ -8,20 +8,20 @@ App({
     let clientID = 'a3fb2113c0a97830d15b'  // 应用名称: TeamSlash的第一个小程序
     wx.BaaS.init(clientID)
 
-
-    // 展示本地存储能力
-    const logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
-
-    // 登录
-    wx.login({
-      success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-      }
+    const self = this
+    wx.BaaS.auth.loginWithWechat().then(res=> {
+      wx.BaaS.auth.getCurrentUser().then(
+        (res)=>{
+          wx.setStorageSync('userInfo', res)
+          self.globalData.userInfo = res
+        },
+        (err)=>{
+          console.log('err', err)
+        }
+      )
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: wx.getStorageSync('userInfo')
   }
 })

@@ -1,0 +1,85 @@
+/* pages/signup/signup.wxss */
+
+.h1 {
+font-family: Poppins;
+font-style: bold;
+font-size: 32px;
+line-height: 40px;
+text-align: center;
+}
+
+.background {
+background-color:rgba(237, 205, 171, 0.7);
+height: 100vh;
+}
+
+.formbackground {
+position: absolute;
+width: 375px;
+left: 0px;
+top: 196px;
+background: #EFEFE6;
+border-radius: 30px 30px 0px 0px;
+}
+.input{
+  margin: 40rpx 40rpx ;
+}
+textarea {
+background: #FFFFFF;
+/* Wireframe/Grey 0 */
+border: 1px solid #333333;
+box-sizing: border-box;
+border-radius: 3px;
+}
+.labels {
+  font-family: 'Poppins';
+  background-color: #EFEFE6;
+  border-radius: 15px;
+  border: 1px solid #000000;
+  line-height: 28px;
+  font-size: 16px;
+  display: inline-flex;
+  padding: 0 16rpx;
+  margin-inline: 8rpx;
+  margin-top: 8rpx;
+  width: fit-content;
+}
+
+.labels-selected {
+  font-family: 'Poppins';
+  background-color: #C4BBDD;
+  font-weight: bold;
+  border-radius: 15px;
+  border: 1px solid #000000;
+  line-height: 28px;
+  font-size: 16px;
+  display: inline-flex;
+  padding: 0 16rpx;
+  margin-inline: 8rpx;
+  width: fit-content;
+}
+
+.single-label-selected {
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+}
+
+.labels-selected image {
+margin-top: 4rpx;
+}
+
+.primary-button {
+background: #111111;
+border-radius: 20px;
+width: 150px;
+height: 40px;
+color: #fff;
+font-weight: 600;
+font-size: 16px;
+line-height: 24px;
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px 24px;
+}
