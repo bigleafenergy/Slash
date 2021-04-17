@@ -1,0 +1,52 @@
+<!--pages/newskill/newskill.wxml-->
+
+<view class="background">
+  <view class="h2">Create a skill</view>
+  <view class="formfield">
+    <view class="p">What are you good at?</view>
+      <input bindinput="bindTitleInput" placeholder="Summarize what you'd like to learn or share"></input>
+  </view>
+
+  <view class="formfield">
+    <view class="p">Give it a label</view>
+      <view wx:if="{{selectedLabel}}" class="labels-selected" > {{selectedLabel}}
+          <view class="single-label-selected" data-index="{{index}}" bindtap="resetLabel"> 
+            <image style="height: 16px; width: 16px" src="/pages/images/icon-x.svg"></image> 
+          </view>
+      </view>
+
+      <view wx:else>
+        <view class="labels" wx:for="{{labels}}" wx:for-item="label" bindtap="chooseLabel" data-name="{{label}}" data-index="{{index}}"> 
+          {{label}}
+        </view>
+      </view>
+  </view>
+
+  <view class="formfield">
+    <view class="p">For how long?</view>
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{sessionLength}}">
+      <view class="picker">
+        Selected: {{selectedSessionLength}}
+      </view>
+    </picker>
+  </view>
+
+  <!-- commenting out for approval 
+    <view class="formfield">
+    <view class="p">When is a good time? </view>
+      <checkbox-group bindchange="checkboxChange">
+          <label class="p" wx:for="{{days}}" wx:key="{{days.value}}">
+            <view class="weui-cell__hd">
+              <checkbox value="{{days.value}}" checked="{{item.checked}}"/>
+            </view>
+            <view class="weui-cell__bd">{{days.name}}</view>
+          </label>
+      </checkbox-group>
+  </view> -->
+
+  <view bindtap="submitUserProfile" class="primary-button"> <view>Teach / Learn</view> </view>
+
+
+
+
+</view>

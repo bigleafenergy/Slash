@@ -5,8 +5,8 @@ Page({
     currentUser: null,
     nickname: null,
     bio: null,
-    labels: [{name: "Photography", selected: false}, {name: "Music", selected: false}, {name: "Languages", selected: false}, {name: "Design", selected: false}, {name: "Coding", selected: false}, {name: "Writing", selected: false}, {name: "Fitness", selected: false}, {name: "Arts & Crafts", selected: false}],
-    // selectedLabel: ''
+    labels: [{name: "Photography", selected: false}, {name: "Music", selected: false}, {name: "Languages", selected: false}, {name: "Design", selected: false}, {name: "Coding", selected: false}, {name: "Writing", selected: false}, {name: "Fitness", selected: false}, {name: "Arts & Crafts", selected: false}, {name: "Other", selected: false}],
+    selectedLabel: ''
   },
 
   onLoad: function (options) {
@@ -64,6 +64,7 @@ Page({
     }, ()=>{
       this.setSelectedLabels()
     })
+    
   },
 
   resetLabel(e){
@@ -104,24 +105,29 @@ Page({
 
   submitUserProfile(){
     const self = this
+    let userID= this.data.currentUser.id
+    console.log (userID)
     let Users = new wx.BaaS.TableObject('_userprofile')
-    let newUser= Users.update()
-    newUser.set({
-      nickname: nickname,
-      label: this.data.selectedLabels,
-      bio: bio,
+    let user = Users.getWithoutData(userID)
+    user.set({
+      nickname: this.data.nickname,
+      labels: this.data.selectedLabels,
+      bio: this.data.bio,
     })
+    console.log("checking", this.data.selectedLabels)
 
-    newUser.save().then(
+    user.update().then(
       (res)=>{
         console.log("new post added", res)
         wx.showToast({
           title: "You're in!",
           icon: 'none',
         })
-        wx.switchTab({
-          url: '/pages/index/index',
+        wx.navigateTo({
+          url: '/pages/community/community',
         })
+      },err=>{
+        console.log("err", err)
       }
     )
  

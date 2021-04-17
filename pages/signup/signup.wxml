@@ -5,12 +5,12 @@
   <block wx:if = "{{currentUser}}">
     <view class="formbackground">
       <view class="h3"> Create a profile </view>
-        <view class="input">
+        <view class="formfield">
           <view class="p">Nickname</view>
           <input type="text" bindinput="bindNameInput" placeholder="{{currentUser.nickname}}" placeholder-class="p"> </input>
         </view>
 
-        <view class="input">
+        <view class="formfield">
           <view class="p">What are you good at?</view>
           <view class="subtitle">Selected labels will appear on your profile</view>
        
@@ -26,9 +26,9 @@
             <!-- </block> -->
         </view>
 
-        <view class="input">
+        <view class="formfield">
           <view class="p">Write a short bio</view>
-            <textarea  bindinput="bindBioInput" placeholder="Decribe yourself with a few slashes"></textarea>
+            <input  bindinput="bindBioInput" placeholder="Decribe yourself with a few slashes"></input>
         </view>
 
         <view bindtap="submitUserProfile" class="primary-button"> <view>Join /Slash Now</view> </view>
