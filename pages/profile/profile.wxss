@@ -1,0 +1,5 @@
+/* pages/profile/profile.wxss */
+.background {
+  background-color:rgba(237, 205, 171, 0.7);
+  height: 100vh;
+  }

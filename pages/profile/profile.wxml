@@ -1,0 +1,39 @@
+<!--pages/profile/profile.wxml-->
+<view class="background">
+  <view>
+    <image src="{{currentUser.avatar}}">
+    </image>
+    <view>
+      <view>{{currentUser.nickname}}</view>
+      <view>{{allinfo[0].bio}}</view>
+  </view>
+  </view>
+  <view>
+    <text>Share</text>
+    <view wx:for="{{shares}}" wx:for-item="skill" class="shares">
+      <view>
+        {{skill.title_skills}}
+      </view>
+      <view>
+        {{skill.description_offer}}
+      </view>
+      <view>
+        Session Length: {{skill.session_length}}
+      </view>
+      <block wx:if="{{skill.availabletime[0]}}">
+        Wee     
+      </block>
+      <view>
+        {{skill.label}}
+      </view>
+    </view>
+  </view>
+  <view>
+    <text>Learn</text>
+    <view class="learns">learnslearnslearnslearns</view>
+  </view>
+  <view>
+    <text>Requests</text>
+    <view class="requests">requestsrequesetsrequests</view>
+  </view>
+</view>

@@ -1,7 +1,10 @@
 {
   "pages":[
     "pages/signup/signup",
-    "pages/community/community"
+    "pages/community/community",
+    "pages/newskill/newskill",
+    "pages/profile/profile"
+
 
   ],
   "window":{
