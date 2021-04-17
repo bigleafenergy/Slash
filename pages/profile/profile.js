@@ -10,7 +10,7 @@ Page({
     currentUser: null,
     allinfo: [],
     shares:[],
-    weekendorweekday:[]
+    availablearray:[]
   },
 
   /**
@@ -60,10 +60,13 @@ Page({
     requeststable.setQuery(query2).find().then(
       (res) => {
         this.setData({
-          shares: res.data.objects
+          shares: res.data.objects,
         })
-      },
-    )
+        console.log("shares",this.data.shares)
+        this.data.shares.forEach((element) => {
+          
+        });
+      })
   },
 
   /**
