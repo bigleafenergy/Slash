@@ -226,4 +226,10 @@ Page({
     })
   },
 
+  switchToSignup: function() {
+    wx.navigateTo({
+      url: '/pages/signup/signup',
+    })
+  }
+
 })
