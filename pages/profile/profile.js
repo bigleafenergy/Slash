@@ -18,10 +18,6 @@ Page({
    */
   onLoad: function (options) {
 
-    this.setData ({
-      currentUser: getApp().globalData.userInfo
-    })
-    console.log("current user",getApp().globalData.userInfo)
   },
 
   /**
@@ -35,6 +31,11 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
+    this.setData ({
+      currentUser: getApp().globalData.userInfo
+    })
+    console.log("current user",getApp().globalData.userInfo)
+    
     let allinfotabletable = new wx.BaaS.TableObject('_userprofile')
     let query = new wx.BaaS.Query()
 

@@ -1,34 +1,15 @@
-/* pages/signup/signup.wxss */
-
-.h1 {
-  font-family: Poppins;
-  font-style: bold;
-  font-size: 32px;
-  line-height: 40px;
-  text-align: center;
-}
-
+/* pages/newskill/newskill.wxss */
 .background {
-  background-color:rgba(237, 205, 171, 0.7);
+  background-color:#EFEFE6;
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-}
-
-.formbackground {
-  width: 100vw;
-  /* height: 1000rpx; */
-  padding: 100rpx 0;
-  left: 0px;
-  top: 196px;
-  background: #EFEFE6;
-  border-radius: 30px 30px 0px 0px;
 }
 .formfield{
   margin: 40rpx 40rpx ;
 }
-input {
+
+input, picker {
   background: #FFFFFF;
   padding: 28rpx 16rpx;
   font-size: 16px;
@@ -76,7 +57,6 @@ input {
 .labels-selected image {
   margin-top: 4rpx;
 }
-
 .primary-button {
   background: #111111;
   border-radius: 20px;
@@ -91,4 +71,5 @@ input {
   align-items: center;
   justify-content: center;
   padding: 0px 24rpx;
+  margin-left: 200rpx;
 }
