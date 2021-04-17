@@ -1,0 +1,45 @@
+<!--pages/community/community.wxml-->
+
+<view class = "sharing" bindtap="switchToSharing">SHARING / </view>
+<view class = "learning" bindtap="switchToLearning">LEARNING</view>
+
+
+<view class = "labels" bindtap="switchToLabel" wx:for="{{labels}}" wx:for-item="label" data-label_id= "{{label.id}}">
+  {{label.name}}
+</view>
+
+
+<view class="background" >
+            <view class = "cards" wx:for="{{skillsWithLabel}}" wx:for-item="skillpost">
+                <view class="nav">
+                    <view class="card card-avatar">
+                        <image src="{{skillpost.picture}}" mode="widthFix"></image>
+                    </view>
+                    
+                    <view class="card card-text">
+                        <view class="card-title">{{skillpost.title_skills}}</view>
+                        <view class="card-content">{{skillpost.description_offer}}</view>
+                        
+                        <view class="card-bottom">
+                            <view>
+                                <image src="../pageimage/see.png"></image>
+                                <text>{{skillpost.count_view}}</text>
+                            </view>
+                            <view>
+                                <image src="../pageimage/comment.png"></image>
+                                <text>{{post.commentLen}}</text>
+                            </view>
+                            <view>
+                                <image src="../pageimage/like.png"></image>
+                                <text>670</text>
+                            </view>
+                        </view>
+                    </view>
+
+                </view>
+                <view class="space"></view>
+            </view>
+    </view>
+
+
+

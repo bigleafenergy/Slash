@@ -3,6 +3,8 @@
     "pages/index/index",
     "pages/signup/signup",
     "pages/logs/logs"
+    "pages/community/community"
+
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -16,6 +18,5 @@
       "provider": "wxc6b86e382a1e3294"
     }
   },
-  "style": "v2",
   "sitemapLocation": "sitemap.json"
 }
