@@ -1,0 +1,42 @@
+<!--pages/signup/signup.wxml-->
+<view class="background">
+  <view class="h1">welcome to /Slash</view>
+
+  <block wx:if = "{{currentUser}}">
+    <view class="formbackground">
+      <view class="h3"> Create a profile </view>
+        <view class="input">
+          <view class="p">Nickname</view>
+          <input type="text" bindinput="bindNameInput" placeholder="{{currentUser.nickname}}" placeholder-class="p"> </input>
+        </view>
+
+        <view class="input">
+          <view class="p">What are you good at?</view>
+          <view class="subtitle">Selected labels will appear on your profile</view>
+       
+            <view class="labels-selected" wx:for="{{labels}}" wx:if="{{item.selected}}">{{item.name}}
+              <view class="single-label-selected" data-index="{{index}}" bindtap="resetLabel"> 
+                <image style="height: 16px; width: 16px" src="/pages/images/icon-x.svg"></image> 
+              </view>
+            </view>
+            <!-- <block wx:else> -->
+              <view class="labels" wx:for="{{labels}}" wx:for-item="label" wx:if="{{!label.selected}}" bindtap="chooseLabel" data-name="{{label}}" data-index="{{index}}"> 
+                {{label.name}}
+              </view>
+            <!-- </block> -->
+        </view>
+
+        <view class="input">
+          <view class="p">Write a short bio</view>
+            <textarea  bindinput="bindBioInput" placeholder="Decribe yourself with a few slashes"></textarea>
+        </view>
+
+        <view bindtap="submitUserProfile" class="primary-button"> <view>Join /Slash Now</view> </view>
+    </view> 
+  </block>
+
+  <block wx:else>
+  <button style="border-radius: 50px;" bindtap="getUserProfile" >Join the Community</button>
+  </block>
+</view>
+
