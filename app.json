@@ -3,6 +3,9 @@
     "pages/signup/signup",
     "pages/community/community",
     "pages/newskill/newskill"
+    "pages/community/community",
+    "pages/profile/profile"
+
 
   ],
   "window":{
