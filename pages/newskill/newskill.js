@@ -10,7 +10,7 @@ Page({
     selectedLabel: '',
     sessionLength: ["0.5 hour", "1 hour", "half day", "whole day"],
     selectedSessionLength: '',
-    dayss: [
+    days: [
       {value: '1', name: 'Monday', checked: 'false'},
       {value: '2', name: 'Tuesday', checked: 'false'},
       {value: '3', name: 'Wednesday', checked: 'false'},
@@ -19,7 +19,7 @@ Page({
       {value: '6', name: 'Saturday', checked: 'false'},
       {value: '7', name: 'Sunday', checked: 'false'}
     ],
-    selectedDays: []
+    selected_days: []
   },
 
   /**
@@ -31,6 +31,7 @@ Page({
       })
 
   },
+
   chooseLabel(e){
     let label = e.currentTarget.dataset.name
     this.setData({
@@ -60,4 +61,9 @@ Page({
     console.log("picker", e.detail)
     let selectedIndex = e.detail.value
   },
+
+  checkboxChange(e){
+    let selected_days = e.detail.value.map(day => parseInt(day))
+    this.setData({selected_days})
+  }
 })

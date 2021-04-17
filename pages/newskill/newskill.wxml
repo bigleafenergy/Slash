@@ -31,18 +31,16 @@
     </picker>
   </view>
 
-  <!-- commenting out for approval 
+  <!-- commenting out for approval  -->
     <view class="formfield">
     <view class="p">When is a good time? </view>
       <checkbox-group bindchange="checkboxChange">
-          <label class="p" wx:for="{{days}}" wx:key="{{days.value}}">
-            <view class="weui-cell__hd">
-              <checkbox value="{{days.value}}" checked="{{item.checked}}"/>
-            </view>
-            <view class="weui-cell__bd">{{days.name}}</view>
+          <label class="p" wx:for="{{days}}" wx:key="{{days.value}}" wx:for-item="day">
+            <checkbox value="{{day.value}}" checked="{{item.checked}}"/>
+            <span class="weui-cell__bd">{{day.name}}</span>
           </label>
       </checkbox-group>
-  </view> -->
+  </view>
 
   <view bindtap="submitUserProfile" class="primary-button"> <view>Teach / Learn</view> </view>
 
