@@ -29,7 +29,8 @@
           "pathName": "pages/newskill/newskill",
           "query": "",
           "scene": null
-
+        },
+        {
           "name": "pages/profile/profile",
           "pathName": "pages/profile/profile",
           "query": "",
