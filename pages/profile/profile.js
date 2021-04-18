@@ -10,6 +10,7 @@ Page({
     currentUser: null,
     allinfo: [],
     shares:[],
+    learn:[],
     availablearray:[]
   },
 
@@ -68,6 +69,26 @@ Page({
           
         });
       })
+
+      let learnlearntable = new wx.BaaS.TableObject('slash_skills')
+      let query3 = new wx.BaaS.Query()
+
+      query3.compare('userid','=',this.data.currentUser.id)
+      query3.compare('learn','=', true)
+
+      learnlearntable.setQuery(query3).find().then(
+        (res) => {
+          this.setData({
+            learn: res.data.objects,
+          })
+          console.log("learnlearnlearn",this.data.learn)
+        },
+      )
+
+      let requestrequesttable = new wx.BaaS.TableObject('slash_requests')
+      let query4 = new wx.BaaS.Query()
+
+
   },
 
   /**
