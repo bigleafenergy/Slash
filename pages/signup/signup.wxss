@@ -1,13 +1,65 @@
 /* pages/signup/signup.wxss */
 
 .h1 {
-  font-family: Poppins;
-  font-style: bold;
-  font-size: 32px;
-  line-height: 40px;
-  text-align: center;
+  font-family: "Poppins";
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
 }
 
+.bold {
+  font-weight: 600;
+}
+
+.banner-text{
+text-align: left;
+margin-left: 100rpx;
+margin-right: 100rpx;
+margin-top: 164rpx;
+width: 300 rpx;
+}
+
+.logotext{
+  display: flex;
+}
+
+.logotext image {
+  height: 275rpx; 
+  width: 275rpx;
+  position: absolute;
+  right: 158rpx;
+  top: 800rpx;
+}
+
+.signup-button {
+  background: #EFEFE6;
+  border-radius: 20px;
+  width: 130px;
+  height: 40px;
+  border-radius: 50px;
+  border: 1px solid #000000;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 20rpx;
+  margin-top: 80rpx;
+  position: absolute;
+  left: 100rpx;
+  top: 390rpx;
+
+}
+
+.welcome{
+  display: flex;
+  flex-direction: column;
+  justify-items: left;
+  width: 680rpx;
+
+}
 .background {
   background-color:rgba(237, 205, 171, 0.7);
   height: 100vh;

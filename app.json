@@ -2,14 +2,11 @@
   "pages":[
     "pages/signup/signup",
     "pages/community/community",
-    "pages/newskill/newskill",
-    "pages/profile/profile"
-
-
+    "pages/newskill/newskill"
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#EFEFE6",
     "navigationBarTitleText": "Weixin",
     "navigationBarTextStyle":"black"
   },
