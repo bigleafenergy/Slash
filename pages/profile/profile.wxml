@@ -42,6 +42,7 @@
           <view>{{theyasking.skills_id.title_skills}}</view>
           <view>{{theyasking.user_id.id}}</view>
           <view>{{theyasking.skills_id.label}}</view>
+          <view>---------------</view>
         </view>
       </view>
     </view>
