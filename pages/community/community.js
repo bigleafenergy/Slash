@@ -232,9 +232,9 @@ Page({
     console.log("click skill", e)
     app.globalData.globalSkillID = e.currentTarget.dataset.skill_id
     console.log('global skill id', app.globalData.globalSkillID)
-    
 
-    wx.navigateTo({
+
+    wx.redirectTo({
       url: '/pages/skilldetail/skilldetail',
     })
   }

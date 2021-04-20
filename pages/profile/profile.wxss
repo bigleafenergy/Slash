@@ -124,6 +124,17 @@ color: #333333;
     height: 40px;
     color: #fff;
     font-weight: 600;
+=======
+  height: 100vh;
+  padding-bottom: 500 rpx;
+  }
+
+  .labellabel {
+    font-family: 'Poppins';
+    background-color: #EFEFE6;
+    border-radius: 15px;
+    border: 1px solid #000000;
+    line-height: 28px;
     font-size: 16px;
     font-family: "Poppins";
     line-height: 24px;
