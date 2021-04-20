@@ -3,3 +3,17 @@
   background-color:rgba(237, 205, 171, 0.7);
   height: 100vh;
   }
+
+  .labellabel {
+    font-family: 'Poppins';
+    background-color: #EFEFE6;
+    border-radius: 15px;
+    border: 1px solid #000000;
+    line-height: 28px;
+    font-size: 16px;
+    display: inline-flex;
+    padding: 0 16rpx;
+    margin-inline: 8rpx;
+    margin-top: 8rpx;
+    width: fit-content;
+  }

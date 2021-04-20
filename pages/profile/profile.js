@@ -87,10 +87,31 @@ Page({
 
       let requestrequesttable = new wx.BaaS.TableObject('slash_requests')
       let query4 = new wx.BaaS.Query()
+      let requested = []
+      let individualsrequesting = []
+      
+      query4.compare('user_id','=',this.data.currentUser.id)
 
+      requestrequesttable.setQuery(query4).expand(['skills_id']).find().then(
+        (res)=> {
+          console.log("requests", res.data.objects)
+          const requests = res.data.objects
+          this.setData({requests})
+        },
+      )
 
+      requestrequesttable.limit(999999999).expand(['skills_id']).find().then((res) => {
+        res.data.objects.forEach((req)=>{
+          if (req.skills_id.userid.id === this.data.currentUser.id){
+            requested.push(req)
+          }
+        })
+        console.log("requested", requested)
+        this.setData({requested})
+      })
+      
   },
-
+      
   /**
    * Lifecycle function--Called when page hide
    */
