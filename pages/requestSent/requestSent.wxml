@@ -1,0 +1,3 @@
+<!--pages/requestSent/requestSent.wxml-->
+<text>Your request has been sent. </text>
+<button bindtap="switchToCommunity">Back to Skills</button>
