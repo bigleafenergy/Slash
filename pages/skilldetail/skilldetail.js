@@ -121,7 +121,7 @@ Page({
     newRequest.save().then(
       (res)=>{
         console.log("new request added", res)
-        wx.navigateTo({
+        wx.redirectTo({
           url: '/pages/requestSent/requestSent',
         })
       }

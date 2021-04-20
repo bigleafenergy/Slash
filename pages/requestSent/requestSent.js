@@ -30,7 +30,8 @@ Page({
   },
 
   switchToCommunity: function(e) {
-    wx.navigateTo({
+    wx.redirectTo({
+
       url: '/pages/community/community',
     })
   }
