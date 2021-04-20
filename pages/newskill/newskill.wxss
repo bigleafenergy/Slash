@@ -5,8 +5,16 @@
   display: flex;
   flex-direction: column;
 }
+
+.h1 {
+  font-family: "Poppins";
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+}
+
 .formfield{
-  margin: 40rpx 40rpx ;
+  margin: 40rpx 48rpx ;
 }
 
 input, picker {

@@ -2,7 +2,8 @@
   "pages":[
     "pages/signup/signup",
     "pages/community/community",
-    "pages/newskill/newskill"
+    "pages/newskill/newskill",
+    "custom-tab-bar/tabbar"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -10,6 +11,9 @@
     "navigationBarTitleText": "Weixin",
     "navigationBarTextStyle":"black"
   },
+  "usingComponents": {
+    "tabBar": "/custom-tab-bar/tabbar"
+   },
   "plugins": {
     "sdkPlugin": {
       "version": "3.18.0",
