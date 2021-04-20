@@ -1,53 +1,61 @@
 <!--pages/profile/profile.wxml-->
+<view class="spacingforbottom">
 <view class="background">
   <view>
-    <image src="{{currentUser.avatar}}">
+    <image src="{{currentUser.avatar}}" class="avatar">
     </image>
     <view>
-      <view>{{currentUser.nickname}}</view>
-      <view>{{allinfo[0].bio}}</view>
+      <view class="userusernamename">{{currentUser.nickname}}</view>
+      <view class="biobio">{{allinfo[0].bio}}</view>
       <view wx:for="{{allinfo[0].labels}}" wx:for-item="labellabellabel" class="labellabel">{{labellabellabel}}</view>
   </view>
   </view>
   <view>
-    <text>Share</text>
+    <text class="categorgies">Share</text>
     <view wx:for="{{shares}}" wx:for-item="skill" class="shares">
-      <view>{{skill.title_skills}}</view>
+      <view class="cardtitles" class="cardtitles">{{skill.title_skills}}</view>
       <view>{{skill.description_offer}}</view>
       <view>Session Length: {{skill.session_length}}</view>
       <block wx:if="{{skill.availabletime[0]}}">Wee</block>
-      <view>{{skill.label}}</view>
+      <view class="labellabel">{{skill.label}}</view>
     </view>
   </view>
   <view>-------</view>
   <view>
-    <text>Learn</text>
-    <view wx:for="{{learn}}" wx:for-item="learnlearn" class="learns">      <view>{{learn.title_skills}}</view>
+    <text class="categorgies">Learn</text>
+    <view wx:for="{{learn}}" wx:for-item="learnlearn" >      
+      <view class="cardtitles">{{learn.title_skills}}</view>
       <view>{{learnlearn.description_offer}}</view>
       <view>Session Length: {{learnlearn.session_length}}</view>
       <block wx:if="{{learnlearn.availabletime[0]}}">Wee</block>
-      <view>{{learnlearn.label}}</view>
+      <view class="labellabel">{{learnlearn.label}}</view>
   </view>
   <view>-------</view>
   <view>
-    <text>Requests (anthony->monica+tina)</text>
-    <view wx:for="{{requests}}" wx:for-item="request" class="measking"></view>
-    <view>{{requests[0].title_skills}}</view>
-  </view>
-  <view>-------</view>
-  <view>
-    <text>Requests (monica+tina->anthony)</text>
-    <view class="requests">
-          <view wx:for="{{requested}}" wx:for-item="theyasking">
-          <view>{{theyasking.skills_id.title_skills}}</view>
-          <view>{{theyasking.user_id.id}}</view>
-          <view>{{theyasking.skills_id.label}}</view>
-        </view>
-      </view>
+    <text class="categorgies">Requests (anthony->monica+tina)</text>
+    <view wx:for="{{irequestpost}}" wx:for-item="irequestthisbro" class="measking">
+      <view class="cardtitles">{{irequestthisbro.skills_id.title_skills}}</view>
+      <view>{{irequestthisbro.skills_id.description_offer}}</view>
+      <view class="labellabel">{{irequestthisbro.skills_id.label}}</view>
     </view>
   </view>
+  <view>-------</view>
+  <view>
+    <text class="categorgies">Requests (monica+tina->anthony)</text>
+    <view class="requests">
+        <view wx:for="{{requested}}" wx:for-item="theyasking">
+          <view class="cardtitles">{{theyasking.skills_id.title_skills}}  
+            <image src="{{theyasking.user_id.avatar}}" class="smallavatar"></image>
+          </view>
+          <view class="labellabel">{{theyasking.skills_id.label}}</view>
+          <button class="swapswap">Swap Skills</button>
+        </view>
+    </view>
+  </view>
+</view>
 
 
+</view>
 </view>
 
 <tabBar></tabBar>

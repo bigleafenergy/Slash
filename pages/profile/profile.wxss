@@ -1,19 +1,135 @@
 /* pages/profile/profile.wxss */
 .background {
-  background-color:rgba(237, 205, 171, 0.7);
-  height: 100vh;
-  }
+  padding-bottom: 180rpx;
+  margin-left: 40rpx;
+  margin-right: 40rpx;
+  padding-top: 40rpx;
+}
 
-  .labellabel {
-    font-family: 'Poppins';
-    background-color: #EFEFE6;
-    border-radius: 15px;
-    border: 1px solid #000000;
-    line-height: 28px;
+.spacingforbottom{
+  background-color:rgba(237, 205, 171, 0.7);
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.smallavatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.biobio {
+width: 215px;
+height: 40px;
+left: 131px;
+bottom: 620px;
+font-family: Poppins;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 20px;
+color: #333333;
+}
+
+.userusernamename{
+  /* Alt Title/Title 6 */
+
+
+width: 104px;
+height: 24px;
+left: 131px;
+bottom: 660px;
+
+/* Alt Title/Title 6 */
+
+font-family: Poppins;
+font-style: normal;
+font-weight: bold;
+font-size: 18px;
+line-height: 24px;
+/* identical to box height, or 133% */
+
+letter-spacing: 0.01em;
+
+/* Wireframe/Grey 0 */
+
+color: #333333;
+}
+
+.labellabel {
+  font-family: 'Poppins';
+  background-color: #EFEFE6;
+  border-radius: 15px;
+  border: 1px solid #000000;
+  line-height: 28px;
+  font-size: 16px;
+  display: inline-flex;
+  padding: 0 16rpx;
+  margin-inline: 8rpx;
+  margin-top: 8rpx;
+  width: fit-content;
+}
+
+.cardtitles {
+  left: 4.76%;
+right: 3.17%;
+top: 10.29%;
+bottom: 72.06%;
+
+/* Title/Title 5 */
+
+font-family: Poppins;
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 24px;
+/* identical to box height, or 120% */
+
+
+/* Wireframe/Grey 0 */
+
+color: #333333;
+}
+
+.categorgies {
+width: 47px;
+height: 20px;
+left: 28px;
+top: 303px;
+
+/* Alt Title/Title 7 */
+
+font-family: Poppins;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+line-height: 20px;
+/* identical to box height, or 125% */
+
+letter-spacing: 0.01em;
+
+/* Wireframe/Grey 0 */
+
+color: #333333;
+}
+
+.swapswap {
+    background: #111111;
+    border-radius: 20px;
+    width: 150px;
+    height: 40px;
+    color: #fff;
+    font-weight: 600;
     font-size: 16px;
-    display: inline-flex;
-    padding: 0 16rpx;
-    margin-inline: 8rpx;
-    margin-top: 8rpx;
-    width: fit-content;
-  }
+    font-family: "Poppins";
+    line-height: 24px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 24rpx;
+}
