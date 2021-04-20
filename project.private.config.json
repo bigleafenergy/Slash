@@ -35,6 +35,11 @@
           "pathName": "pages/profile/profile",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/skilldetail/skilldetail",
+          "pathName": "pages/skilldetail/skilldetail",
+          "scene": null
         }
       ]
     }
