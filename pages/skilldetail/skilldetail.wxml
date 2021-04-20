@@ -1,0 +1,25 @@
+<!--pages/skilldetail/skilldetail.wxml-->
+<!-- <text>pages/skilldetail/skilldetail.wxml</text> -->
+<view class="background" >
+  <!-- <view class="card-picture">
+    <image src="{{clickSkill.picture}}" mode="widthFix"></image>
+  </view> -->
+  <view class="card card-text">
+    <view class="card-title">{{clickSkill.title_skills}}<image src="../pageimage/like.png" class="btnbtn"></image> </view>
+    <view class="card-content">----------------------</view>
+    <view class="card-content">{{clickSkill.session_length}} hours</view> 
+    <view class="card-content">{{userinfo.city}}</view>
+    <view class="card-content">{{availableDay}}</view>
+    <view class="card-content">----------------------</view>
+    <view class="card-content">{{clickSkill.description_offer}}</view>
+    <button bindtap="swap">SWAP SKILLS!</button>
+  </view>
+  <view class="card-content">----------------------</view>
+  <view class="card-user" >
+    <view class="card-picture"><image src="{{userinfo.avatar}}" mode="widthFix"></image></view>
+    <view>{{userinfo.nickname}}</view>
+    <view>{{userinfo.bio}}</view>
+    <view>{{userinfo.labels}}</view>
+  </view>
+
+</view>
