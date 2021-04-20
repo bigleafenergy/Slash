@@ -3,7 +3,9 @@
     "pages/signup/signup",
     "pages/community/community",
     "pages/newskill/newskill",
-    "pages/profile/profile"
+    "pages/profile/profile",
+    "pages/skilldetail/skilldetail",
+    "pages/requestSent/requestSent"
 
 
   ],

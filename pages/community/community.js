@@ -1,4 +1,6 @@
 // pages/community/community.js
+const app = getApp()
+
 Page({
 
   /**
@@ -226,10 +228,16 @@ Page({
     })
   },
 
-  switchToSignup: function() {
+  switchToSignup: function(e) {
+    console.log("click skill", e)
+    app.globalData.globalSkillID = e.currentTarget.dataset.skill_id
+    console.log('global skill id', app.globalData.globalSkillID)
+    
+
     wx.navigateTo({
-      url: '/pages/signup/signup',
+      url: '/pages/skilldetail/skilldetail',
     })
   }
+
 
 })

@@ -34,7 +34,7 @@
 
 <view class="space"></view>
 <view class="background" >
-            <view bindtap="switchToSignup"  class = "cards" wx:for="{{skillsWithLabel}}" wx:for-item="skillpost">
+            <view bindtap="switchToSignup"  class = "cards" wx:for="{{skillsWithLabel}}" wx:for-item="skillpost" data-skill_id= "{{skillpost.id}}">
                 <view class="nav">
                     <view class="card card-avatar">
                         <image src="{{skillpost.picture}}" mode="widthFix"></image>
