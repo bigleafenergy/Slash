@@ -1,9 +1,12 @@
 <!--pages/signup/signup.wxml-->
 <view class="background">
-  <view class="h1">welcome to /Slash</view>
-
   <block wx:if = "{{currentUser}}">
+    <view class="h1 bold">
+        welcome to 
+        <view><image style="  height: 275rpx; width: 275rpx;" src="/pages/images/logotext.svg"></image></view>
+      </view>
     <view class="formbackground">
+  
       <view class="h3"> Create a profile </view>
         <view class="formfield">
           <view class="p">Nickname</view>
@@ -36,7 +39,16 @@
   </block>
 
   <block wx:else>
-  <button style="border-radius: 50px;" bindtap="getUserProfile" >Join the Community</button>
+    <view class="welcome">
+      <view class="h1 banner-text">
+        A skill exchange to share what you love to do, and learn from friends
+      </view>
+       <button class="signup-button"  bindtap="getUserProfile" >
+        Start Now <image src="/pages/images/arrow-right.svg"></image>
+       </button>
+    </view>
+    <view class="logotext"><image src="/pages/images/logotext.svg"></image></view>
+
   </block>
 </view>
 

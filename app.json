@@ -5,16 +5,18 @@
     "pages/newskill/newskill",
     "pages/profile/profile",
     "pages/skilldetail/skilldetail",
-    "pages/requestSent/requestSent"
-
-
+    "pages/requestSent/requestSent",
+    "custom-tab-bar/tabbar"
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#EFEFE6",
     "navigationBarTitleText": "Weixin",
     "navigationBarTextStyle":"black"
   },
+  "usingComponents": {
+    "tabBar": "/custom-tab-bar/tabbar"
+   },
   "plugins": {
     "sdkPlugin": {
       "version": "3.18.0",

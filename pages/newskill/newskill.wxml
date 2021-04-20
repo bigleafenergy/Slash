@@ -1,8 +1,9 @@
 <!--pages/newskill/newskill.wxml-->
 
 <view class="background">
-  <view class="h2">Create a skill</view>
+  
   <view class="formfield">
+    <view class="h1">Create a skill</view>
     <view class="p">What are you good at?</view>
       <input bindinput="bindTitleInput" placeholder="Summarize what you'd like to learn or share"></input>
   </view>
