@@ -1,15 +1,20 @@
 <!--pages/newskill/newskill.wxml-->
 
 <view class="background">
-  
+
   <view class="formfield">
     <view class="h1">Create a skill</view>
-    <view class="p">What are you good at?</view>
+    <view class="h3">What would you like to do?</view>
       <input bindinput="bindTitleInput" placeholder="Summarize what you'd like to learn or share"></input>
   </view>
 
   <view class="formfield">
-    <view class="p">Give it a label</view>
+    <view class="h3">Give us more detail</view>
+      <input bindinput="bindDescriptionInput" placeholder="Describe your vision for the session"></input>
+  </view>
+
+  <view class="formfield">
+    <view class="h3">Give it a label</view>
       <view wx:if="{{selectedLabel}}" class="labels-selected" > {{selectedLabel}}
           <view class="single-label-selected" data-index="{{index}}" bindtap="resetLabel"> 
             <image style="height: 16px; width: 16px" src="/pages/images/icon-x.svg"></image> 
@@ -22,19 +27,17 @@
         </view>
       </view>
   </view>
-
   <view class="formfield">
-    <view class="p">For how long?</view>
+    <view class="h3">For how long?</view>
     <picker bindchange="bindPickerChange" value="{{index}}" range="{{sessionLength}}">
       <view class="picker">
-        Selected: {{selectedSessionLength}}
+        Select session length: {{selectedSessionLength}}
       </view>
     </picker>
   </view>
-
   <!-- commenting out for approval  -->
     <view class="formfield">
-    <view class="p">When is a good time? </view>
+    <view class="h3">When is a good time? </view>
       <checkbox-group bindchange="checkboxChange">
           <label class="p" wx:for="{{days}}" wx:key="{{days.value}}" wx:for-item="day">
             <checkbox value="{{day.value}}" checked="{{item.checked}}"/>
@@ -43,9 +46,21 @@
       </checkbox-group>
   </view>
 
-  <view bindtap="submitUserProfile" class="primary-button"> <view>Teach / Learn</view> </view>
+  <view class="formfield">
+    <view class="h3">Where will this take place?</view>
+      <input bindinput="bindCityInput" placeholder="Type in the city name"></input>
+  </view>
+
+  <view class="flex-display">
+      <view class="secondary-button" bindtap="submitLearnSkill" > 
+        <view>Learn</view> 
+      </view>
+
+      <view class="primary-button" bindtap="submitTeachSkill" > 
+        <view>Teach</view> 
+      </view>
 
 
-
+  </view>
 
 </view>
