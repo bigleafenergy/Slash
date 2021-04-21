@@ -1,3 +1,16 @@
 <!--pages/requestSent/requestSent.wxml-->
-<text>Your request has been sent. </text>
-<button bindtap="switchToCommunity">Back to Skills</button>
+<view class="background">
+
+<view class="welcome">
+      <view class="h1 banner-text">
+        Your request has been sent. 
+      </view>
+       <button class="signup-button"  bindtap="switchToCommunity" >
+        <image src="/pages/images/arrow-left.png"></image>Back to Skills 
+       </button>
+    </view>
+
+      <view class="logotext"><image src="/pages/images/logotext.svg"></image></view>
+
+
+  </view>
