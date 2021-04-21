@@ -5,6 +5,7 @@ Page({
     currentUser: null,
     nickname: null,
     bio: null,
+    contact: null,
     labels: [{name: "Photography", selected: false}, {name: "Music", selected: false}, {name: "Languages", selected: false}, {name: "Design", selected: false}, {name: "Coding", selected: false}, {name: "Writing", selected: false}, {name: "Fitness", selected: false}, {name: "Arts & Crafts", selected: false}, {name: "Other", selected: false}],
     selectedLabel: ''
   },
@@ -103,6 +104,13 @@ Page({
     })
   },
 
+  bindContactInput: function(e){
+    console.log("Bio", e)
+    this.setData({
+      contact: e.detail.value
+    })
+  },
+
   submitUserProfile(){
     const self = this
     let userID= this.data.currentUser.id
@@ -113,9 +121,9 @@ Page({
       nickname: this.data.nickname,
       labels: this.data.selectedLabels,
       bio: this.data.bio,
+      contact: this.data.contact
     })
     console.log("checking", this.data.selectedLabels)
-
     user.update().then(
       (res)=>{
         console.log("new post added", res)
@@ -137,24 +145,5 @@ Page({
   
   },
 
-  /**
-   * Lifecycle function--Called when page show
-   */
-  onShow: function () {
 
-  },
-
-  /**
-   * Called when page reach bottom
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * Called when user click on the top right corner to share
-   */
-  onShareAppMessage: function () {
-
-  }
 })

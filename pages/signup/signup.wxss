@@ -9,6 +9,24 @@
 
 .bold {
   font-weight: 600;
+  font-size: 32px;
+  line-height: 40px;
+}
+
+.center{
+  text-align: center;
+  margin-top: 100rpx;
+}
+
+.signup-welcome{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.welcome-image{
+  height: 100rpx;
+  width: 275rpx;
 }
 
 .banner-text{
@@ -18,7 +36,29 @@ margin-right: 100rpx;
 margin-top: 164rpx;
 width: 300 rpx;
 }
+.h2{
+  font-family: "Poppins";
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  padding-bottom: 8rpx;
+}
+.h3 {
+  font-family: "Poppins";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  padding: 16rpx 0;
+}
 
+.subtitle {
+  font-family: "Poppins";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  padding-bottom: 16rpx;
+  color: #333333;
+}
 .logotext{
   display: flex;
 }
@@ -58,7 +98,12 @@ width: 300 rpx;
   flex-direction: column;
   justify-items: left;
   width: 680rpx;
+}
 
+.welcome image {
+  height: 48rpx;
+  width: 48rpx;
+  padding-left: 4rpx;
 }
 .background {
   background-color:rgba(237, 205, 171, 0.7);
@@ -70,10 +115,10 @@ width: 300 rpx;
 
 .formbackground {
   width: 100vw;
-  /* height: 1000rpx; */
-  padding: 100rpx 0;
+  /* height: 1000rpx;
   left: 0px;
-  top: 196px;
+  top: 62rpx; */
+  padding: 12rpx 0;
   background: #EFEFE6;
   border-radius: 30px 30px 0px 0px;
 }
@@ -128,13 +173,17 @@ input {
 .labels-selected image {
   margin-top: 4rpx;
 }
-
+.flex-display{
+  display: flex;
+  justify-content: center;
+}
 .primary-button {
   background: #111111;
   border-radius: 20px;
-  width: 150px;
-  height: 40px;
+  width: 300rpx;
+  height: 80rpx;
   color: #fff;
+  font-family: "Poppins";
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
@@ -143,4 +192,6 @@ input {
   align-items: center;
   justify-content: center;
   padding: 0px 24rpx;
+  margin-top: 24rpx;
+  margin-bottom: 64rpx;
 }

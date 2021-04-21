@@ -1,20 +1,22 @@
 <!--pages/signup/signup.wxml-->
 <view class="background">
   <block wx:if = "{{currentUser}}">
-    <view class="h1 bold">
+    <view class="signup-welcome">
+      <view class="h1 bold center">
         welcome to 
-        <view><image style="  height: 275rpx; width: 275rpx;" src="/pages/images/logotext.svg"></image></view>
+        <view><image class= "welcome-image" src="/pages/images/logotext.svg"></image></view>
       </view>
+    </view>
+    
     <view class="formbackground">
   
-      <view class="h3"> Create a profile </view>
         <view class="formfield">
-          <view class="p">Nickname</view>
+          <view class="h2"> Create a profile </view>
+          <view class="h3">Nickname</view>
           <input type="text" bindinput="bindNameInput" placeholder="{{currentUser.nickname}}" placeholder-class="p"> </input>
         </view>
-
         <view class="formfield">
-          <view class="p">What are you good at?</view>
+          <view class="h3">What are you good at?</view>
           <view class="subtitle">Selected labels will appear on your profile</view>
        
             <view class="labels-selected" wx:for="{{labels}}" wx:if="{{item.selected}}">{{item.name}}
@@ -28,13 +30,17 @@
               </view>
             <!-- </block> -->
         </view>
-
         <view class="formfield">
-          <view class="p">Write a short bio</view>
+          <view class="h3">Write a short bio</view>
             <input  bindinput="bindBioInput" placeholder="Decribe yourself with a few slashes"></input>
         </view>
-
-        <view bindtap="submitUserProfile" class="primary-button"> <view>Join /Slash Now</view> </view>
+        <view class="formfield">
+          <view class="h3">Add your WeChat ID or phone number</view>
+            <input  bindinput="bindContactInput" placeholder="Others can add you with your permission"></input>
+        </view>
+        <view class="flex-display">
+          <view bindtap="submitUserProfile" class="primary-button"> <view>Join /Slash Now</view> </view>
+        </view>
     </view> 
   </block>
 

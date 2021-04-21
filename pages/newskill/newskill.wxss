@@ -1,9 +1,10 @@
 /* pages/newskill/newskill.wxss */
 .background {
   background-color:#EFEFE6;
-  height: 100vh;
   display: flex;
   flex-direction: column;
+  width: 100vw;
+  left: 0px;
 }
 
 .h1 {
@@ -12,9 +13,23 @@
   font-size: 24px;
   line-height: 32px;
 }
-
+.h3 {
+  font-family: "Poppins";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  padding: 16rpx 0;
+}
+.subtitle {
+  font-family: "Poppins";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  padding-bottom: 16rpx;
+  color: #333333;
+}
 .formfield{
-  margin: 40rpx 48rpx ;
+  margin: 20rpx 40rpx ;
 }
 
 input, picker {
@@ -65,12 +80,19 @@ input, picker {
 .labels-selected image {
   margin-top: 4rpx;
 }
+.flex-display{
+  display: flex;
+  justify-content: space-around;
+  margin: 50rpx 120rpx;
+  
+}
 .primary-button {
   background: #111111;
   border-radius: 20px;
-  width: 150px;
+  width: fit-content;
   height: 40px;
   color: #fff;
+  font-family: "Poppins";
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
@@ -78,6 +100,25 @@ input, picker {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding: 0px 24rpx;
-  margin-left: 200rpx;
+  padding: 0px 48rpx;
+  /* margin-bottom: 60rpx; */
+}
+
+.secondary-button {
+  background: #EFEFE6;
+  border: 1px solid #111111;
+  border-radius: 20px;
+  width: fit-content;
+  height: 40px;
+  color: #111111;
+  font-family: "Poppins";
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 48rpx;
+  /* margin-bottom: 60rpx; */
 }

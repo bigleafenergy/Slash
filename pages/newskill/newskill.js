@@ -6,6 +6,8 @@ Page({
    */
   data: {
     currentUser: null,
+    description_offer: null,
+    title_skills: null,
     labels:["Photography","Music","Languages","Design", "Coding","Writing", "Fitness","Arts & Crafts","Other"],
     selectedLabel: '',
     sessionLength: ["0.5 hour", "1 hour", "half day", "whole day"],
@@ -19,7 +21,8 @@ Page({
       {value: '6', name: 'Saturday', checked: 'false'},
       {value: '7', name: 'Sunday', checked: 'false'}
     ],
-    selected_days: []
+    available_time: [],
+    city: null,
   },
 
   /**
@@ -30,6 +33,20 @@ Page({
       currentUser: wx.getStorageSync('userInfo')
       })
 
+  },
+
+  bindTitleInput(e){
+    console.log("Title", e.detail.value)
+    this.setData({
+      title_skills: e.detail.value
+    })
+  },
+
+  bindDescriptionInput(e){
+    console.log("Description", e)
+    this.setData({
+      description_offer: e.detail.value
+    })
   },
 
   chooseLabel(e){
@@ -61,9 +78,82 @@ Page({
     console.log("picker", e.detail)
     let selectedIndex = e.detail.value
   },
-
+  
   checkboxChange(e){
-    let selected_days = e.detail.value.map(day => parseInt(day))
-    this.setData({selected_days})
-  }
+    let available_time = e.detail.value.map(day => parseInt(day))
+    this.setData({available_time})
+  },
+
+  bindCityInput(e){
+    console.log("Description", e)
+    this.setData({
+      city: e.detail.value
+    })
+  },
+
+  submitLearnSkill(){
+    const self = this
+    let userID= this.data.currentUser.id
+    console.log (userID)
+
+    let Skills = new wx.BaaS.TableObject('slash_skills')
+    let newSkill = Skills.create()
+    newSkill.set({
+      userid: userID,
+      description_offer: this.data.description_offer,
+      title_skills: this.data.title_skills,
+      label: this.data.selectedLabel,
+      session_length: this.data.selectedSessionLength,
+      available_time: this.data.available_time,
+      learn: false,
+    })
+    console.log("checking", this.data.selectedLabels)
+    newSkill.save().then(
+      (res)=>{
+        console.log("new skill added", res)
+        wx.showToast({
+          title: "Posted!",
+          icon: 'none',
+        })
+        wx.navigateTo({
+          url: '/pages/community/community',
+        })
+      },err=>{
+        console.log("err", err)
+      }
+    )
+  },
+
+  submitTeachSkill(){
+    const self = this
+    let userID= this.data.currentUser.id
+    console.log (userID)
+
+    let Skills = new wx.BaaS.TableObject('slash_skills')
+    let newSkill = Skills.create()
+    newSkill.set({
+      userid: userID,
+      description_offer: this.data.description_offer,
+      title_skills: this.data.title_skills,
+      label: this.data.selectedLabel,
+      session_length: this.data.selectedSessionLength,
+      available_time: this.data.available_time,
+      learn: true,
+    })
+    console.log("checking", this.data.selectedLabels)
+    newSkill.save().then(
+      (res)=>{
+        console.log("new skill added", res)
+        wx.showToast({
+          title: "Posted!",
+          icon: 'none',
+        })
+        wx.navigateTo({
+          url: '/pages/community/community',
+        })
+      },err=>{
+        console.log("err", err)
+      }
+    )
+  },
 })
