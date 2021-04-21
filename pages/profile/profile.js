@@ -11,7 +11,8 @@ Page({
     allinfo: [],
     shares:[],
     learn:[],
-    availablearray:[]
+    availablearray:[],
+    irequestpost:[]
   },
 
   /**
@@ -32,6 +33,7 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
+    const self = this
     this.setData ({
       currentUser: getApp().globalData.userInfo
     })
@@ -85,12 +87,41 @@ Page({
         },
       )
 
-      let requestrequesttable = new wx.BaaS.TableObject('slash_requests')
+      let irequesttable = new wx.BaaS.TableObject('slash_requests')
       let query4 = new wx.BaaS.Query()
+      let requested = []
+      
+      query4.compare('user_id','=',this.data.currentUser.id)
+      console.log("this.data.currentUser.id", this.data.currentUser.id)
+      irequesttable.setQuery(query4).expand('skills_id').find().then(
+        (res) => {
+          console.log("this.data.currentUser.id2", res)
+          this.setData({
+            irequestpost: res.data.objects,
+          })
+          console.log("irequestthis",this.data.irequestpost)
+        }, err=>{
+          console.log("error", err)
+        }
+      )
 
+      let requestrequesttable = new wx.BaaS.TableObject('slash_requests')
 
+      requestrequesttable.expand(['skills_id','user_id']).find().then((res) => {
+        console.log(getApp().globalData.userInfo)
+        res.data.objects.forEach((req)=>{
+          if (req.skills_id.userid === undefined) {
+            return 
+          }else if(req.skills_id.userid.id === self.data.currentUser.id){
+            requested.push(req)
+          }
+        })
+        console.log("requested", requested)
+        this.setData({requested})
+      })
+      
   },
-
+      
   /**
    * Lifecycle function--Called when page hide
    */

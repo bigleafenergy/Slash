@@ -39,6 +39,11 @@
         {
           "name": "pages/requestSent/requestSent",
           "pathName": "pages/requestSent/requestSent",
+           "scene": null
+         },
+        {
+          "name": "pages/skilldetail/skilldetail",
+          "pathName": "pages/skilldetail/skilldetail",
           "scene": null
         }
       ]
