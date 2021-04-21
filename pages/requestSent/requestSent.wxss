@@ -1,1 +1,65 @@
 /* pages/requestSent/requestSent.wxss */
+
+.background {
+  background-color:rgba(237, 205, 171, 0.7);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.logotext{
+  display: flex;
+}
+
+.logotext image {
+  height: 275rpx; 
+  width: 275rpx;
+  position: absolute;
+  right: 158rpx;
+  top: 800rpx;
+}
+.welcome-image{
+  height: 100rpx;
+  width: 275rpx;
+}
+.h1 {
+  font-family: "Poppins";
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+}
+.banner-text{
+text-align: left;
+margin-left: 100rpx;
+margin-right: 100rpx;
+margin-top: 164rpx;
+width: 300 rpx;
+}
+
+.signup-button {
+  background: #EFEFE6;
+  border-radius: 20px;
+  width: fit-content;
+  height: 80rpx;
+  border-radius: 50px;
+  border: 1px solid #000000;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 20rpx;
+  margin-top: 80rpx;
+  position: absolute;
+  left: 100rpx;
+  top: 390rpx;
+
+}
+
+.welcome image {
+  height: 48rpx;
+  width: 48rpx;
+  padding-left: 4rpx;
+}

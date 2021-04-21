@@ -35,6 +35,11 @@
           "pathName": "pages/profile/profile",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/requestSent/requestSent",
+          "pathName": "pages/requestSent/requestSent",
+          "scene": null
         }
       ]
     }
