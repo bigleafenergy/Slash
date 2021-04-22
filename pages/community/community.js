@@ -188,18 +188,17 @@ Page({
       key: 'hasUserInfo',
       success: res=>{
         console.log("success", res)
-        app.globalData.globalSkillID = e.currentTarget.dataset.skill_id
-        wx.redirectTo({
+        getApp().globalData.globalSkillID = e.currentTarget.dataset.skill_id
+        wx.navigateTo({
           url: '/pages/skilldetail/skilldetail',
         })
       },
       fail: res=>{
-        wx.redirectTo({
+        wx.navigateTo({
           url: '/pages/signup/signup?showform=true',
         })
       }
     })
-
   }
 
 

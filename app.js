@@ -23,6 +23,7 @@ App({
     })
   },
   globalData: {
-    userInfo: wx.getStorageSync('userInfo')
+    userInfo: wx.getStorageSync('userInfo'),
+    globalSkillID: 11
   }
 })
