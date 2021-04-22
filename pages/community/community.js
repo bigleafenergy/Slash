@@ -184,6 +184,7 @@ Page({
   },
 
   switchToSignup: function(e) {
+    console.log("switchToSignupswitchToSignupswitchToSignup")
     wx.getStorage({
       key: 'hasUserInfo',
       success: res=>{
@@ -194,19 +195,14 @@ Page({
         })
       },
       fail: res=>{
+        console.log("????", res)
         wx.redirectTo({
           url: '/pages/signup/signup?showform=true',
         })
       }
     })
-    console.log("click skill", e)
-    console.log('global skill id', app.globalData.globalSkillID)
-
-    wx.navigateTo({
-      url: '/pages/skilldetail/skilldetail',
-    })
 
   }
 
 
-})
+})  
