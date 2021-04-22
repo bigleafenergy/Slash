@@ -6,7 +6,7 @@ Page({
     nickname: null,
     bio: null,
     contact: null,
-    labels: [{name: "Photography", selected: false}, {name: "Music", selected: false}, {name: "Languages", selected: false}, {name: "Design", selected: false}, {name: "Coding", selected: false}, {name: "Writing", selected: false}, {name: "Fitness", selected: false}, {name: "Arts & Crafts", selected: false}, {name: "Other", selected: false}],
+    labels: [{name: "Photography", selected: false}, {name: "Music", selected: false}, {name: "Languages", selected: false}, {name: "Design", selected: false}, {name: "Coding", selected: false}, {name: "Writing", selected: false}, {name: "Fitness", selected: false}, {name: "Arts & Crafts", selected: false}, {name: "Coffee", selected: false}, {name: "Outdoor", selected: false}, {name: "Other", selected: false}],
     selectedLabel: ''
   },
 

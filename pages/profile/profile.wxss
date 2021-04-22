@@ -124,9 +124,8 @@ color: #333333;
     height: 40px;
     color: #fff;
     font-weight: 600;
-=======
-  height: 100vh;
-  padding-bottom: 500 rpx;
+  /* height: 100vh;
+  padding-bottom: 500 rpx; */
   }
 
   .labellabel {
