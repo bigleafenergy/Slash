@@ -122,6 +122,14 @@ Page({
       
   },
       
+
+  clickonskillexchange:function(){
+    wx.navigateTo({
+      url: 'pages/requestdetail/requestdetail',
+    }),
+    console.log("worksworks")
+  },
+
   /**
    * Lifecycle function--Called when page hide
    */

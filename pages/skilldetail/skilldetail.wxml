@@ -18,7 +18,7 @@
 
     <view class="card-info">
       <image src="../images/icon-map-pin.png"></image>
-      <text>{{userinfo.city}}</text> 
+      <text>{{clickSkill.city}}</text> 
     </view>
 
     <view class="card-info">
@@ -49,6 +49,7 @@
       </view>
 
     </view>
+
     <view class="card-label">
       <view class = "userlabel" wx:for="{{userinfo.labels}}" wx:for-item="label">{{label}}</view>
     </view>

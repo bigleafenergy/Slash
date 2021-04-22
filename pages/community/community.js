@@ -189,7 +189,7 @@ Page({
     console.log('global skill id', app.globalData.globalSkillID)
 
 
-    wx.redirectTo({
+    wx.navigateTo({
       url: '/pages/skilldetail/skilldetail',
     })
   }
