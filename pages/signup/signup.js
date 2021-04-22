@@ -2,6 +2,7 @@
 Page({
 
   data: {
+    showForm: false,
     currentUser: null,
     nickname: null,
     bio: null,
@@ -11,9 +12,25 @@ Page({
   },
 
   onLoad: function (options) {
-    this.setData ({
-      currentUser: wx.getStorageSync('userInfo')
-      })
+    wx.getStorage({
+      key: 'hasUserInfo',
+      success: res=>{
+        wx.redirectTo({
+          url: '/pages/community/community',
+        })
+      },
+      fail: res=>{
+        this.setData({
+          currentUser: wx.getStorageSync('userInfo')
+        })
+        console.log("showform", options)
+        if (options.showform == "true"){
+          this.setData({
+            showForm: true
+          })
+        }
+      }
+    })
 
     // let Labels = new wx.BaaS.TableObject('slash_labels')
     // const self = this
@@ -27,29 +44,12 @@ Page({
     //   }
     // )
   },
-
-  getUserProfile(){
-    wx.getUserProfile({
-      desc: "Get user info for login",
-      success: res=>{
-        console.log("profile", res.userInfo)
-        let userInfo = res.userInfo
-        const self = this
-        wx.BaaS.auth.loginWithWechat(userInfo).then(
-          (res) => {
-            console.log('res',res)
-            self.setData({
-              currentUser: res
-            })
-            wx.setStorageSync('userInfo', res)
-            // console.log(this.data.currentUser.id)
-          }, (err) => {
-            console.log('err',err)
-          }
-        )
-      }}
-    )
+  toIndex(){
+    wx.redirectTo({
+      url: '/pages/community/community',
+    })
   },
+
   bindNameInput: function(e){
     console.log("Name", e)
     this.setData({
@@ -113,31 +113,58 @@ Page({
 
   submitUserProfile(){
     const self = this
-    let userID= this.data.currentUser.id
-    console.log (userID)
-    let Users = new wx.BaaS.TableObject('_userprofile')
-    let user = Users.getWithoutData(userID)
-    user.set({
-      nickname: this.data.nickname,
-      labels: this.data.selectedLabels,
-      bio: this.data.bio,
-      contact: this.data.contact
-    })
-    console.log("checking", this.data.selectedLabels)
-    user.update().then(
-      (res)=>{
-        console.log("new post added", res)
-        wx.showToast({
-          title: "You're in!",
-          icon: 'none',
+    wx.getUserProfile({
+      desc: "Get user info for login",
+      success: res =>{
+      //   wx.BaaS.auth.updateUserInfo(res).then(user => {
+      //     // user 包含用户完整信息，详见下方描述
+      //     console.log("user profile", user)
+      //   }, err => {
+      //     // **err 有两种情况**：用户拒绝授权，HError 对象上会包含基本用户信息：id、openid、unionid；其他类型的错误，如网络断开、请求超时等，将返回 HError 对象（详情见下方注解）
+      // })
+        console.log("profile", res.userInfo)
+        let userProfile = res.userInfo
+        console.log('user profile check',userProfile)
+        const self = this
+        let userID = this.data.currentUser.id
+        let Users = new wx.BaaS.TableObject('_userprofile')
+        let user = Users.getWithoutData(userID)
+        console.log("userProfile.avatarUrl", userProfile.avatarUrl)
+
+        user.set({
+          nickname: this.data.nickname,
+          labels: this.data.selectedLabels,
+          avatar: userProfile.avatarUrl,
+          bio: this.data.bio,
+          contact: this.data.contact,
+          avatarUrl: userProfile.avatarUrl
         })
-        wx.navigateTo({
-          url: '/pages/community/community',
-        })
-      },err=>{
-        console.log("err", err)
-      }
+        user.update().then(
+          (res)=>{
+          wx.setStorageSync('userInfo', res.data)
+          wx.setStorage({
+            data: true,
+            key: 'hasUserInfo',
+            success: ()=>{
+              wx.navigateTo({
+                url: '/pages/community/community',
+              })
+            }
+            })
+            console.log("new post added", res)
+            wx.showToast({
+              title: "You're in!",
+              icon: 'none',
+            })
+          },err=>{
+            console.log("err", err)
+          }
+        )
+        
+      }}
     )
+
+    
  
   },
 
