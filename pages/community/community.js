@@ -229,14 +229,23 @@ Page({
   },
 
   switchToSignup: function(e) {
-    console.log("click skill", e)
-    app.globalData.globalSkillID = e.currentTarget.dataset.skill_id
-    console.log('global skill id', app.globalData.globalSkillID)
-
-
-    wx.redirectTo({
-      url: '/pages/skilldetail/skilldetail',
+    wx.getStorage({
+      key: 'hasUserInfo',
+      success: res=>{
+        console.log("success", res)
+        app.globalData.globalSkillID = e.currentTarget.dataset.skill_id
+        wx.redirectTo({
+          url: '/pages/skilldetail/skilldetail',
+        })
+      },
+      fail: res=>{
+        wx.redirectTo({
+          url: '/pages/signup/signup?showform=true',
+        })
+      }
     })
+    console.log("click skill", e)
+    console.log('global skill id', app.globalData.globalSkillID)
   }
 
 

@@ -8,9 +8,9 @@ Page({
     currentUser: null,
     description_offer: null,
     title_skills: null,
-    labels:["Photography","Music","Languages","Design", "Coding","Writing", "Fitness","Arts & Crafts","Other"],
+    labels:["Photography","Music","Languages","Design", "Coding","Writing", "Fitness","Arts & Crafts","Coffee", "Outdoors","Other"],
     selectedLabel: '',
-    sessionLength: ["0.5 hour", "1 hour", "half day", "whole day"],
+    sessionLength: ["0.5 hour", "1 hour", "2 hours","half day", "whole day"],
     selectedSessionLength: '',
     days: [
       {value: '1', name: 'Monday', checked: 'false'},

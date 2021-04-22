@@ -10,6 +10,7 @@ App({
 
     const self = this
     wx.BaaS.auth.loginWithWechat().then(res=> {
+      console.log("baas login", res)
       wx.BaaS.auth.getCurrentUser().then(
         (res)=>{
           wx.setStorageSync('userInfo', res)
