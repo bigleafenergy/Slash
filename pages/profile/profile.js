@@ -123,29 +123,12 @@ Page({
   },
       
 
-  // swap: function(e) {
-
-
-  //   let requestTable = new wx.BaaS.TableObject('slash_requests')
-  //   let newRequest = requestTable.create()
-  //   newRequest.set({
-  //     user_id: this.data.currentUser.id,
-  //     skills_id:  this.data.clickSkill.id,
-
-      
-  //   })
-  //   newRequest.save().then(
-  //     (res)=>{
-  //       console.log("new request added", res)
-  //       wx.redirectTo({
-  //         url: '/pages/requestSent/requestSent',
-  //       })
-  //     }
-  //   )
-
-
-  // }
-
+  clickonskillexchange:function(){
+    wx.navigateTo({
+      url: 'pages/requestdetail/requestdetail',
+    }),
+    console.log("worksworks")
+  },
 
   /**
    * Lifecycle function--Called when page hide
