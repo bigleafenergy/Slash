@@ -1,4 +1,5 @@
 <!--pages/community/community.wxml-->
+<!-- <view class = "justfullbackground"> -->
 <view class="background">
 
     <view class = "title " >What people around you are</view>
@@ -23,14 +24,14 @@
 
     <view class="space"></view>
 
-    <view bindtap="switchToSignup"  class = "cards" wx:if="{{labels[0].selected}}" wx:for="{{allSkills}}" wx:for-item="skillpost" data-skill_id= "{{skillpost.id}}">
+    <view bindtap="switchToSignup" wx:if="{{labels[0].selected}}" wx:for="{{allSkills}}" wx:for-item="skillpost" data-skill_id= "{{skillpost.id}}">
         <view class="nav">
-            <view class="card card-text">
+            <view class="card-text">
                 <view class="card-title">{{skillpost.title_skills}}</view>
-                <view class="card-content">Session Length: {{skillpost.session_length}}</view>
-                <view class="card-content">Available Time: {{skillpost.dayArray}}</view>                 
+                <view class="card-content1">Session Length: {{skillpost.session_length}}</view>
+                <view class="card-content2">Available Time: {{skillpost.dayArray}}</view>                 
             </view>
-            <view class="card card-avatar">
+            <view class="card-avatar">
                 <image src="{{skillpost.picture}}" mode="widthFix"></image>
             </view>
         </view>
@@ -41,18 +42,18 @@
 
     <view bindtap="switchToSignup"  class = "cards" wx:for="{{skillsWithLabel}}" wx:for-item="skillpost" data-skill_id= "{{skillpost.id}}">
         <view class="nav">
-            <view class="card card-text">
+            <view class="card-text">
                 <view class="card-title">{{skillpost.title_skills}}</view>
-                <view class="card-content">Session Length: {{skillpost.session_length}}</view>
-                <view class="card-content">Available Time: {{skillpost.dayArray}}</view>                 
+                <view class="card-content1">Session Length: {{skillpost.session_length}}</view>
+                <view class="card-content2">Available Time: {{skillpost.dayArray}}</view>                 
             </view>
-            <view class="card card-avatar">
+            <view class="card-avatar">
                 <image src="{{skillpost.picture}}" mode="widthFix"></image>
             </view>
         </view>
         <view class="space"></view>
     </view>
 </view>
-
+<!-- </view> -->
 
 

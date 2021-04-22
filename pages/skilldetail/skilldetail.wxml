@@ -49,6 +49,7 @@
       </view>
 
     </view>
+
     <view class="card-label">
       <view class = "userlabel" wx:for="{{userinfo.labels}}" wx:for-item="label">{{label}}</view>
     </view>
