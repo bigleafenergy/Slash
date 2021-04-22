@@ -8,77 +8,38 @@ Page({
    */
   data: {
     // labels: [],
+    allSkills: [],
     skillsWithLabel: [],
     // learnlocal: false,
-    labels: [{name: "Photography", selected: false}, {name: "Music", selected: false}, {name: "Languages", selected: false}, {name: "Design", selected: false}, {name: "Coding", selected: false}, {name: "Writing", selected: false}, {name: "Fitness", selected: false}, {name: "Arts & Crafts", selected: false}],
+    labels: [{name: "All", selected: true}, {name: "Photography", selected: false}, {name: "Music", selected: false}, {name: "Languages", selected: false}, {name: "Design", selected: false}, {name: "Coding", selected: false}, {name: "Writing", selected: false}, {name: "Fitness", selected: false}, {name: "Arts & Crafts", selected: false}, {name: "Coffee", selected: false}, {name: "Outdoor", selected: false}, {name: "Other", selected: false}],
     share: 1,
 
   },
 
-
-
-
-
-  onLoad: function (options) {
-  },
-
   onShow: function (options) {
-    // const self = this
-    // let labelsTable = new wx.BaaS.TableObject('slash_labels')
-
-    // console.log(labelsTable)
-    // labelsTable.limit(100).find().then(
-    //   (res) => {
-    //     console.log('here print label able', res)
-    //     self.setData({
-    //       labels: res.data.objects.reverse()
-    //     }) 
-    //   }, 
-    //   (err) => {
-    //     console.log("here we have an err", err)
-    // })
-
-
-
-
-
-
-
-
-
-
+    this.setAllSkillsTable()
   },
 
-
-  switchToLabel: function(e) {
-    console.log("clicklable", e)
-    let selectedLabel = e.currentTarget.dataset.label_name
-    console.log(selectedLabel)
-
+  setAllSkillsTable() {
+    const self = this
     let skillsTable = new wx.BaaS.TableObject('slash_skills')
     let query = new wx.BaaS.Query()
 
-    console.log(skillsTable)
-    query.compare('label','=', selectedLabel)
-    query.compare('learn','=', this.data.learnlocal)
-
+    let learnlocal = null
+    if (this.data.share == 0) {
+      learnlocal = true
+    } else {
+      learnlocal = false
+    }
+    query.compare('learn','=', learnlocal)
     skillsTable.setQuery(query).find().then(
       (res) => {
-        console.log("skillTablequery", res)
         this.setData({
-          skillsWithLabel: res.data.objects
+          allSkills: res.data.objects.reverse()
         })
-      }
-  )
-
-  let index = e.currentTarget.dataset.index
-  this.data.labels[index].selected = true
-  this.setData({
-    labels: this.data.labels
-  }, ()=>{
-    this.setSelectedLabels()
-  })
-
+      },(err) => {
+        console.log("here we have an err", err)
+      })
 
   },
 
@@ -87,6 +48,7 @@ Page({
       learnlocal: true,
       share: 1
     })
+    this.setAllSkillsTable()
 
     this.setData({
       labels: this.data.labels
@@ -94,11 +56,13 @@ Page({
       this.setSelectedLabels()
     })
   },
+  
   switchToLearning: function(e) {
     this.setData({
       learnlocal: false,
       share: 0
     })
+    this.setAllSkillsTable()
 
     this.setData({
       labels: this.data.labels
@@ -109,14 +73,36 @@ Page({
 
   chooseLabel(e){
     let index = e.currentTarget.dataset.index
-    this.data.labels[index].selected = true
-    this.setData({
-      labels: this.data.labels
-    }, ()=>{
-      this.setSelectedLabels()
-    })
-
-    
+    if (index == 0){
+      this.data.labels.forEach((label, index)=>{
+        if (index!=0){
+          label.selected = false
+          this.setData({
+            labels: this.data.labels,
+            skillsWithLabel: []
+          })
+        } else {
+          label.selected = true
+          this.setData({
+            labels: this.data.labels,
+          })
+        }
+      })
+    } else {
+      console.log("choose label index", index)
+      if(this.data.labels[0].selected == true && index != 0){
+        this.data.labels[0].selected = false
+        this.setData({
+          labels: this.data.labels
+        })
+      }
+      this.data.labels[index].selected = true
+      this.setData({
+        labels: this.data.labels
+      }, ()=>{
+        this.setSelectedLabels()
+      })
+    }
   },
 
   resetLabel(e){
@@ -134,20 +120,15 @@ Page({
     this.data.labels.forEach((label)=>{
       if (label.selected){
         selectedLabels.push(label.name)
+        console.log("label", label.name == "All")
       }
     })
     this.setData({
       selectedLabels: selectedLabels
     })
 
-    // console.log("clicklable", e)
-    // let selectedLabel = e.currentTarget.dataset.label_name
-    // console.log(selectedLabel)
-
     let skillsTable = new wx.BaaS.TableObject('slash_skills')
     let query = new wx.BaaS.Query()
-    let localskillsWithLabel = []
-    // console.log(skillsTable)
     console.log("selectedLabels", selectedLabels)
 
     let learnlocal = null
@@ -166,52 +147,26 @@ Page({
       query.in('label', selectedLabels)
       skillsTable.setQuery(query).find().then(
         (res) => {
-        console.log("skillTablequery", res)
+        let skillsWithLabel = res.data.objects
         this.setData({
-         skillsWithLabel: res.data.objects
+         skillsWithLabel: res.data.objects.reverse()
         })
+        console.log("skillTablequery", res, skillsWithLabel)
 
-        // this.data.skillsWithLabel.forEach((post) => {
-        //   console.log(post.available_time)
-        //   if (post.available_time.length == 2) {
-        //     post.avai_weekday = "All week"
-        //     console.log("week", post.avai_weekday)
-        //   } else if (post.available_time.length == 3 ) {
-        //     post.avai_weekday = "Weekend"
-        //     console.log(post.avai_weekday)
-        //   }
-        // })
-
+        let weekArray = ["Mon", "Tue", "Wed", "Mon", "Tue", "Sun"]
+        // console.log("skillsWithLabel 1", skillsWithLabel)
+        skillsWithLabel.forEach((skill, idx)=>{
+          skill["dayArray"] = []
+          console.log("checking each skill", skill)
+          skill.available_time.forEach((day, index)=>{
+            skill["dayArray"].push(weekArray[day])
+            this.setData({
+              skillsWithLabel: this.data.skillsWithLabel
+            })
+          })
+        })
       })
-
-      // selectedLabels.forEach((selectedbaby) => {
-      //   console.log(selectedbaby)
-      //   query.compare('label','=', selectedbaby)
-
-      //   skillsTable.setQuery(query).find().then(
-      //     (res) => {
-      //       console.log("skillTablequery", res)
-            
-      //       localskillsWithLabel.push(res.data.objects)
-      //       console.log("LOCAL skillTablequery", localskillsWithLabel)
-
-      //     })
-
-          
-      // })
-      // query.compare('label','=', selectedLabels)
-      // this.setData({
-      //   skillsWithLabel: localskillsWithLabel
-      // })
-      // console.log("setdata skillTablequery", this.data.skillsWithLabel)
-
-  
-
-      }
-
-
-
-
+    }
   },
 
   bindLabelInput: function(e){

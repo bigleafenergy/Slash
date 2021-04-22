@@ -4,7 +4,7 @@
   <!-- <view class="card-picture">
     <image src="{{clickSkill.picture}}" mode="widthFix"></image>
   </view> -->
-    <view class="card-title">{{clickSkill.title_skills}}<image src="../pageimage/like.png" class="btnbtn"></image></view>
+    <view class="card-title">{{clickSkill.title_skills}}<image src="../images/icon-heart.png" class="btnbtn"></image></view>
     <view>
       <view class="space"></view>
       <view class="line"></view>
