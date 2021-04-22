@@ -1,6 +1,6 @@
 <!--pages/signup/signup.wxml-->
 <view class="background">
-  <block wx:if = "{{currentUser}}">
+  <block wx:if = "{{showForm}}">
     <view class="signup-welcome">
       <view class="h1 bold center">
         welcome to 
@@ -39,7 +39,7 @@
             <input  bindinput="bindContactInput" placeholder="Others can add you with your permission"></input>
         </view>
         <view class="flex-display">
-          <view bindtap="submitUserProfile" class="primary-button"> <view>Join /Slash Now</view> </view>
+          <button bindtap="submitUserProfile" class="primary-button"> <view>Join /Slash Now</view> </button>
         </view>
     </view> 
   </block>
@@ -49,7 +49,7 @@
       <view class="h1 banner-text">
         A skill exchange to share what you love to do, and learn from friends
       </view>
-       <button class="signup-button"  bindtap="getUserProfile" >
+       <button class="signup-button" bindtap="toIndex" >
         Start Now <image src="/pages/images/arrow-right.svg"></image>
        </button>
     </view>

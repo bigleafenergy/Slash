@@ -12,6 +12,7 @@ Component({
     }, {
       pagePath: "/pages/newskill/newskill",
       iconPath: "/pages/images/create.png",
+      selectedIconPath: "/pages/images/create.png",
       isSpecial: true
     }, {
       pagePath: "/pages/profile/profile",

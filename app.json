@@ -6,6 +6,7 @@
     "pages/profile/profile",
     "pages/skilldetail/skilldetail",
     "pages/requestSent/requestSent",
+    "pages/requestdetail/requestdetail",
     "custom-tab-bar/tabbar"
   ],
   "window":{

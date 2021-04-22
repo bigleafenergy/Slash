@@ -1,0 +1,57 @@
+<!--pages/requestdetail/requestdetail.wxml-->
+<!--pages/skilldetail/skilldetail.wxml-->
+<!-- <text>pages/skilldetail/skilldetail.wxml</text> -->
+<view class="background" >
+  <!-- <view class="card-picture">
+    <image src="{{clickSkill.picture}}" mode="widthFix"></image>
+  </view> -->
+    <view class="card-title">{{clickSkill.title_skills}}<image src="../pageimage/like.png" class="btnbtn"></image></view>
+    <view>
+      <view class="space"></view>
+      <view class="line"></view>
+      <view class="space"></view>
+    </view>
+
+    <view class="card-info">
+      <image src="../images/icon-clock.png"></image>
+      <text>{{clickSkill.session_length}} hours</text> 
+    </view>
+
+    <view class="card-info">
+      <image src="../images/icon-map-pin.png"></image>
+      <text>{{clickSkill.city}}</text> 
+    </view>
+
+    <view class="card-info">
+      <image src="../images/icon-calendar.png"></image>
+      <text>{{availableDay}}</text> 
+    </view>
+
+    <view>
+      <view class="space"></view>
+      <view class="line"></view>
+      <view class="space"></view>
+    </view>
+
+    <view class="card-content">{{clickSkill.description_offer}}</view>
+    <button class="swapbutton" bindtap="swap">SWAP SKILLS!</button>
+
+    <view>
+      <view class="spacebig"></view>
+      <view class="line"></view>
+      <view class="spacebig"></view>
+    </view>
+
+    <view class="card-user" >
+      <image src="{{userinfo.avatar}}" mode="widthFix"></image>
+      <view class="usertag">
+        <view class = "username">{{userinfo.nickname}}</view>
+        <view class = "userbio">{{userinfo.bio}}</view>
+      </view>
+
+    </view>
+    <view class="card-label">
+      <view class = "userlabel" wx:for="{{userinfo.labels}}" wx:for-item="label">{{label}}</view>
+    </view>
+
+</view>
