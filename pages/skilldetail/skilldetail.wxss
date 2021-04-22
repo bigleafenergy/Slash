@@ -32,7 +32,10 @@
   /* margin-top: 20px; */
   /* top: 20px; */
   margin-left: 28px;
-  width: 980px;
+  /* margin-right: 28px; */
+  width: 600rpx;
+  display: flex;
+  flex-wrap:wrap;
 
   font-family: Poppins;
   font-style: normal;
