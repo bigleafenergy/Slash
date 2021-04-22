@@ -15,7 +15,7 @@
   <view class="space"></view>
   <view>
     <text class="smallcategory">Share</text>
-    <view wx:for="{{shares}}" wx:for-item="skill" class="shares">
+    <view wx:for="{{shares}}" wx:for-item="skill" class="shares" bindtap="clickonskillexchange">
       <view class="cardcard">
         <view class="cardtitles" class="cardtitles">{{skill.title_skills}}</view>
         <view>{{skill.description_offer}}</view>
@@ -29,7 +29,7 @@
   <view class="space"></view>
   <view>
     <text class="smallcategory">Learn</text>
-    <view wx:for="{{learn}}" wx:for-item="learnlearn" >
+    <view wx:for="{{learn}}" wx:for-item="learnlearn" bindtap="clickonskillexchange">
       <view class="cardcard">      
         <view class="cardtitles">{{learnlearn.title_skills}}</view>
         <view>{{learnlearn.description_offer}}</view>
