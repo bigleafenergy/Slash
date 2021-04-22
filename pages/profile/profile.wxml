@@ -9,46 +9,62 @@
       <view class="biobio">{{allinfo[0].bio}}</view>
       <view wx:for="{{allinfo[0].labels}}" wx:for-item="labellabellabel" class="labellabel">{{labellabellabel}}</view>
   </view>
+  <view class="space"></view>
   </view>
+  <text class="categorgies">Your Skill Exchange</text>
+  <view class="space"></view>
   <view>
-    <text class="categorgies">Share</text>
+    <text class="smallcategory">Share</text>
     <view wx:for="{{shares}}" wx:for-item="skill" class="shares">
-      <view class="cardtitles" class="cardtitles">{{skill.title_skills}}</view>
-      <view>{{skill.description_offer}}</view>
-      <view>Session Length: {{skill.session_length}}</view>
-      <block wx:if="{{skill.availabletime[0]}}">Wee</block>
-      <view class="labellabel">{{skill.label}}</view>
+      <view class="cardcard">
+        <view class="cardtitles" class="cardtitles">{{skill.title_skills}}</view>
+        <view>{{skill.description_offer}}</view>
+        <view>Session Length: {{skill.session_length}}</view>
+        <block wx:if="{{skill.availabletime[0]}}">Wee</block>
+        <view class="cardlabel">{{skill.label}}</view>
+      </view>
+      <view class="space"></view>
+    </view>
+  </view>
+  <view class="space"></view>
+  <view>
+    <text class="smallcategory">Learn</text>
+    <view wx:for="{{learn}}" wx:for-item="learnlearn" >
+      <view class="cardcard">      
+        <view class="cardtitles">{{learnlearn.title_skills}}</view>
+        <view>{{learnlearn.description_offer}}</view>
+        <view>Session Length: {{learnlearn.session_length}}</view>
+        <block wx:if="{{learnlearn.availabletime[0]}}">Wee</block>   
+        <view class="cardlabel">{{learnlearn.label}}</view>
+      </view> 
+      <view class="space"></view>
+  </view>
+  <view>-------</view>
+  <view>
+    <text class="categorgies">Requests</text>
+      <view wx:for="{{irequestpost}}" wx:for-item="irequestthisbro" class="measking">
+        <view class="cardcard">
+          <view class="cardtitles">{{irequestthisbro.skills_id.title_skills}}</view>
+          <view>{{irequestthisbro.skills_id.description_offer}}</view>
+          <view class="cardlabel">{{irequestthisbro.skills_id.label}}</view>
+        </view>
+        <view class="space"></view>
     </view>
   </view>
   <view>-------</view>
   <view>
-    <text class="categorgies">Learn</text>
-    <view wx:for="{{learn}}" wx:for-item="learnlearn" >      
-      <view class="cardtitles">{{learn.title_skills}}</view>
-      <view>{{learnlearn.description_offer}}</view>
-      <view>Session Length: {{learnlearn.session_length}}</view>
-      <block wx:if="{{learnlearn.availabletime[0]}}">Wee</block>
-      <view class="labellabel">{{learnlearn.label}}</view>
-  </view>
-  <view>-------</view>
-  <view>
-    <text class="categorgies">Requests (anthony->monica+tina)</text>
-    <view wx:for="{{irequestpost}}" wx:for-item="irequestthisbro" class="measking">
-      <view class="cardtitles">{{irequestthisbro.skills_id.title_skills}}</view>
-      <view>{{irequestthisbro.skills_id.description_offer}}</view>
-      <view class="labellabel">{{irequestthisbro.skills_id.label}}</view>
-    </view>
-  </view>
-  <view>-------</view>
-  <view>
-    <text class="categorgies">Requests (monica+tina->anthony)</text>
+    <text class="categorgies">Requests</text>
     <view class="requests">
         <view wx:for="{{requested}}" wx:for-item="theyasking">
-          <view class="cardtitles">{{theyasking.skills_id.title_skills}}  
-            <image src="{{theyasking.user_id.avatar}}" class="smallavatar"></image>
+          <view class="cardcard">
+            <view class="cardtitles">{{theyasking.skills_id.title_skills}}  
+              <view>
+                <view><image src="{{theyasking.user_id.avatar}}" class="smallavatar"></image>
+              </view>
+                <view class="cardlabel">{{theyasking.skills_id.label}}</view></view>
+            </view>
           </view>
-          <view class="labellabel">{{theyasking.skills_id.label}}</view>
-          <button class="swapswap">Swap Skills</button>
+          <view class="space"></view>
         </view>
     </view>
   </view>
