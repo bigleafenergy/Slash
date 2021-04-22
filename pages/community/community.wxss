@@ -2,7 +2,7 @@
 .background{
   background-color: rgba(237, 205, 171, 0.7);
   min-height: 100vh;
-  padding-bottom: 18rpx;
+  padding-bottom: 130rpx;
   /* margin-bottom: 500rpx; */
 }
 
