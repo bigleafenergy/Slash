@@ -199,8 +199,7 @@ Page({
         })
       }
     })
-    console.log("click skill", e)
-    console.log('global skill id', app.globalData.globalSkillID)
+
   }
 
 
