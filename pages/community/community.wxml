@@ -1,75 +1,58 @@
 <!--pages/community/community.wxml-->
 <view class="background">
 
-<view class = "title " >What people around you are</view>
+    <view class = "title " >What people around you are</view>
     <view class = "subtitle" wx:if="{{share == 0}}" >
         <view class="unselected"  bindtap="switchToSharing" >SHARING</view>
-        <view class="unselected" > / </view>
+        <view class="selected" > / </view>
         <view class = "selected">LEARNING</view>  
     </view>
     <view class = "subtitle" wx:if="{{share == 1}}" >
         <view class="selected">SHARING</view>
-        <view class="unselected" > / </view>
+        <view class="selected" > / </view>
         <view class = "unselected" bindtap="switchToLearning" >LEARNING</view>  
     </view>
 
-<!-- <view class="space"></view> -->
+    <view class="labels-selected" wx:for="{{labels}}" wx:if="{{item.selected}}">{{item.name}}
+        <view class="single-label-selected" data-index="{{index}}" bindtap="resetLabel"> 
+            <image style="height: 16px; width: 16px" src="/pages/images/icon-x.svg"></image> 
+        </view>
+    </view>
+    <view class="labels" wx:for="{{labels}}" wx:for-item="label" wx:if="{{!label.selected}}" bindtap="chooseLabel" data-name="{{label}}" data-index="{{index}}"> {{label.name}}
+    </view>
 
+    <view class="space"></view>
 
-
-<view class="labels-selected" wx:for="{{labels}}" wx:if="{{item.selected}}">{{item.name}}
-              <view class="single-label-selected" data-index="{{index}}" bindtap="resetLabel"> 
-                <image style="height: 16px; width: 16px" src="/pages/images/icon-x.svg"></image> 
-              </view>
+    <view bindtap="switchToSignup"  class = "cards" wx:if="{{labels[0].selected}}" wx:for="{{allSkills}}" wx:for-item="skillpost" data-skill_id= "{{skillpost.id}}">
+        <view class="nav">
+            <view class="card card-text">
+                <view class="card-title">{{skillpost.title_skills}}</view>
+                <view class="card-content">Session Length: {{skillpost.session_length}}</view>
+                <view class="card-content">Available Time: {{skillpost.dayArray}}</view>                 
             </view>
-            <!-- <block wx:else> -->
-              <view class="labels" wx:for="{{labels}}" wx:for-item="label" wx:if="{{!label.selected}}" bindtap="chooseLabel" data-name="{{label}}" data-index="{{index}}"> 
-                {{label.name}}
-              </view>
-            <!-- </block> -->
-
-
-
-<!-- <view class = "labels" bindtap="switchToLabel" wx:for="{{labels}}" wx:for-item="label" data-label_name= "{{label.name}}">
-  {{label.name}}
-</view> -->
-
-<view class="space"></view>
-<view class="background" >
-            <view bindtap="switchToSignup"  class = "cards" wx:for="{{skillsWithLabel}}" wx:for-item="skillpost" data-skill_id= "{{skillpost.id}}">
-                <view class="nav">
-                    <view class="card card-avatar">
-                        <image src="{{skillpost.picture}}" mode="widthFix"></image>
-                    </view>
-                    
-                    <view class="card card-text">
-                        <view class="card-title">{{skillpost.title_skills}}</view>
-                        <view class="card-content">{{skillpost.description_offer}}</view>
-                        <!-- <view class="card-content">{{skillpost.avai_weekday}}</view> -->
-
-                        
-                        <view class="card-bottom">
-                            <view>
-                                <image src="../pageimage/see.png"></image>
-                                <text>20</text>
-                            </view>
-                            <view>
-                                <image src="../pageimage/comment.png"></image>
-                                <text>30</text>
-                            </view>
-                            <view>
-                                <image src="../pageimage/like.png"></image>
-                                <text>670</text>
-                            </view>
-                        </view>
-                    </view>
-
-                </view>
-                <view class="space"></view>
+            <view class="card card-avatar">
+                <image src="{{skillpost.picture}}" mode="widthFix"></image>
             </view>
+        </view>
+        <view class="space"></view>
+    </view>
+
+
+
+    <view bindtap="switchToSignup"  class = "cards" wx:for="{{skillsWithLabel}}" wx:for-item="skillpost" data-skill_id= "{{skillpost.id}}">
+        <view class="nav">
+            <view class="card card-text">
+                <view class="card-title">{{skillpost.title_skills}}</view>
+                <view class="card-content">Session Length: {{skillpost.session_length}}</view>
+                <view class="card-content">Available Time: {{skillpost.dayArray}}</view>                 
+            </view>
+            <view class="card card-avatar">
+                <image src="{{skillpost.picture}}" mode="widthFix"></image>
+            </view>
+        </view>
+        <view class="space"></view>
     </view>
 </view>
 
-<tabBar></tabBar>
 
 

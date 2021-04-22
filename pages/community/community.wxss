@@ -89,25 +89,6 @@
   /* background-color: rgba(237, 205, 171, 0.7); */
 }
 
-.card-bottom {
-  display: flex;
-  margin-top: 10rpx;
-}
-.card-bottom view {
-  font-size: 24rpx;
-  color: rgb(149,149,149);
-  margin-right: 30rpx;
-  display: flex;
-}
-.card-bottom image {
-  width: 35rpx;
-  height: 35rpx;
-}
-.card-bottom text {
-  line-height: 35rpx;
-}
-
-
 .labels {
   font-family: 'Poppins';
   background-color: #EFEFE6;
@@ -171,12 +152,13 @@ padding: 0px 24px;
   margin-top: 20rpx;
   margin-left: 20rpx;
   display: flex;
+  color: #C4BBDD;
 }
 
 .selected {
   font-weight: 700;
   font-size: 24px;
-  color: #C4BBDD;
+  /* color: #C4BBDD; */
   display: -webkit-box;
   -webkit-line-clamp: 1;
   overflow: hidden;

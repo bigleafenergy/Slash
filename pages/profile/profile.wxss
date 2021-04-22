@@ -121,12 +121,10 @@ color: #333333;
     background: #111111;
     border-radius: 20px;
     width: 150px;
-    height: 40px;
     color: #fff;
     font-weight: 600;
-=======
-  height: 100vh;
-  padding-bottom: 500 rpx;
+    height: 100vh;
+    padding-bottom: 500 rpx;
   }
 
   .labellabel {
