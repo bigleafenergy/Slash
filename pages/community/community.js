@@ -32,11 +32,12 @@ Page({
       learnlocal = false
     }
     query.compare('learn','=', learnlocal)
-    skillsTable.setQuery(query).find().then(
+    skillsTable.setQuery(query).expand('userid').find().then(
       (res) => {
         this.setData({
           allSkills: res.data.objects.reverse()
         })
+        console.log("all skill expand userid", this.data.allSkills)
       },(err) => {
         console.log("here we have an err", err)
       })
@@ -145,7 +146,8 @@ Page({
       })
     } else {
       query.in('label', selectedLabels)
-      skillsTable.setQuery(query).find().then(
+
+      skillsTable.setQuery(query).expand('userid').find().then(
         (res) => {
         let skillsWithLabel = res.data.objects
         this.setData({
