@@ -24,6 +24,7 @@ App({
   },
   globalData: {
     userInfo: wx.getStorageSync('userInfo'),
-    globalSkillID: 11
+    globalSkillID: 11,
+    globalRequestID: null
   }
 })

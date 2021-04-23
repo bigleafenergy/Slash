@@ -12,7 +12,8 @@ Page({
     shares:[],
     learn:[],
     availablearray:[],
-    irequestpost:[]
+    irequestpost:[],
+    requested: []
   },
 
   /**
@@ -89,7 +90,7 @@ Page({
 
       let irequesttable = new wx.BaaS.TableObject('slash_requests')
       let query4 = new wx.BaaS.Query()
-      let requested = []
+      let requestedlocal = []
       
       query4.compare('user_id','=',this.data.currentUser.id)
       console.log("this.data.currentUser.id", this.data.currentUser.id)
@@ -105,19 +106,25 @@ Page({
         }
       )
 
+
+
       let requestrequesttable = new wx.BaaS.TableObject('slash_requests')
 
       requestrequesttable.expand(['skills_id','user_id']).find().then((res) => {
+        console.log("print out expand res", res)    
         console.log(getApp().globalData.userInfo)
+
         res.data.objects.forEach((req)=>{
           if (req.skills_id.userid === undefined) {
             return 
           }else if(req.skills_id.userid.id === self.data.currentUser.id){
-            requested.push(req)
+            requestedlocal.push(req)
           }
         })
-        console.log("requested", requested)
-        this.setData({requested})
+        // console.log("requested", requested)
+        this.setData({
+          requested: requestedlocal
+        })
       })
       
   },
@@ -146,38 +153,14 @@ Page({
       })
     },
 
-  /**
-   * Lifecycle function--Called when page hide
-   */
-  onHide: function () {
 
-  },
+    switchToSwapPage: function(e) {
+      console.log("swappage switch", e)
+      app.globalData.globalRequestID = e.currentTarget.dataset.request_id
+      wx.navigateTo({
+        url: '/pages/requestswap/requestswap',
+      })
+    }
 
-  /**
-   * Lifecycle function--Called when page unload
-   */
-  onUnload: function () {
 
-  },
-
-  /**
-   * Page event handler function--Called when user drop down
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * Called when page reach bottom
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * Called when user click on the top right corner to share
-   */
-  onShareAppMessage: function () {
-
-  }
 })

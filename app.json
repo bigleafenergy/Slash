@@ -7,7 +7,9 @@
     "pages/skilldetail/skilldetail",
     "pages/requestSent/requestSent",
     "pages/requestdetail/requestdetail",
-    "custom-tab-bar/tabbar"
+    "custom-tab-bar/tabbar",
+    "pages/requestswap/requestswap"
+
   ],
   "window":{
     "backgroundTextStyle":"light",
