@@ -116,6 +116,7 @@ Page({
     wx.getUserProfile({
       desc: "Get user info for login",
       success: res =>{
+        
       //   wx.BaaS.auth.updateUserInfo(res).then(user => {
       //     // user 包含用户完整信息，详见下方描述
       //     console.log("user profile", user)
