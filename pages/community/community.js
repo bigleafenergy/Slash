@@ -197,20 +197,11 @@ Page({
         })
       },
       fail: res=>{
-<<<<<<< HEAD
-        console.log("????", res)
-        wx.redirectTo({
-=======
         wx.navigateTo({
->>>>>>> 4286419caf576ced1d4baf4cbbae3a5aeb69529e
           url: '/pages/signup/signup?showform=true',
         })
       }
     })
-<<<<<<< HEAD
-
-=======
->>>>>>> 4286419caf576ced1d4baf4cbbae3a5aeb69529e
   }
 
 

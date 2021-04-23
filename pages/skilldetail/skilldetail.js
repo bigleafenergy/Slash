@@ -46,17 +46,17 @@ Page({
     let availableTimeTable = this.data.clickSkill.available_time
     availableTimeTable.forEach((item) => {
       if (item == 1) {
-        dayArray.push("Mon")
+        dayArray.push(" Mon")
       } else if (item == 2) {
-        dayArray.push("Tue")
+        dayArray.push(" Tue")
       } else if (item == 3) {
-        dayArray.push("Wed")
+        dayArray.push(" Wed")
       } else if (item == 4) {
-        dayArray.push("Thu")
+        dayArray.push(" Thu")
       } else if (item == 5) {
-        dayArray.push("Fri")
+        dayArray.push(" Fri")
       } else if (item == 6) {
-        dayArray.push("Sat")
+        dayArray.push(" Sat")
       } else if (item == 7) {
         dayArray.push("Sun")
       } 

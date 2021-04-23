@@ -6,13 +6,27 @@
   padding-top: 40rpx;
 }
 
+
 .spacingforbottom{
   background-color:rgba(237, 205, 171, 0.7);
 }
 
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  padding: 22rpx;
+}
+
+.profile-text {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-items: space-between;
+}
+
 .avatar {
-  width: 100px;
-  height: 100px;
+  width: 200rpx;
+  height: 200rpx;
   border-radius: 50%;
 }
 
@@ -21,12 +35,13 @@
   height: 100px;
   border-radius: 50%;
 }
+.usertag {
+  display: flex;
+  flex-direction: column;
+}
 
 .biobio {
-width: 215px;
-height: 40px;
-left: 131px;
-bottom: 620px;
+padding-left: 40rpx;
 font-family: Poppins;
 font-style: normal;
 font-weight: normal;
@@ -36,28 +51,20 @@ color: #333333;
 }
 
 .userusernamename{
-  /* Alt Title/Title 6 */
-
-
-width: 104px;
-height: 24px;
-left: 131px;
-bottom: 660px;
-
-/* Alt Title/Title 6 */
-
-font-family: Poppins;
+ font-family: Poppins;
 font-style: normal;
 font-weight: bold;
 font-size: 18px;
 line-height: 24px;
-/* identical to box height, or 133% */
-
 letter-spacing: 0.01em;
-
-/* Wireframe/Grey 0 */
-
 color: #333333;
+padding-left: 36rpx;
+}
+
+label-flex{
+  margin-top: 22rpx;
+  display: flex !important;
+  flex-flow: row !important;
 }
 
 .labellabel {
@@ -67,94 +74,84 @@ color: #333333;
   border: 1px solid #000000;
   line-height: 28px;
   font-size: 16px;
-  display: inline-flex;
-  padding: 0 16rpx;
-  margin-inline: 8rpx;
+  padding: 0 22rpx;
   margin-top: 8rpx;
-  width: fit-content;
 }
-
+.section-image {
+  height: 48rpx;
+  width: 48rpx;
+  padding-left: 4rpx;
+}
 .cardtitles {
-/* title */
-
-
-left: 4.76%;
-right: 28.25%;
-top: 10.29%;
-bottom: 72.06%;
-
 /* Title/Title 5 */
-
 font-family: Poppins;
 font-style: normal;
-font-weight: 500;
+font-weight: 600;
 font-size: 20px;
 line-height: 24px;
-/* identical to box height, or 120% */
-
-
-/* Wireframe/Grey 0 */
-
+min-height: 120rpx;
 color: #333333;
 }
 
-.categorgies {
-  width: 184px;
-  height: 24px;
-  left: 69px;
-  top: 681px;
+.card-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.subtitle{
+  font-family: 'Poppins';
+  color: #333333;
+  font-weight: 400;
+  font-size: 15px;
+}
+.cardlabel {
+  font-family: 'Poppins';
+  background-color: #c4bbdd;
+  border-radius: 15px;
+  border: 1px solid #000000;
+  line-height: 28px;
+  font-size: 16px;
+  font-family: "Poppins";
+  width: fit-content;
+  line-height: 24px;
+  /* display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center; */
+  padding: 0px 24rpx;
+}
+
+.section-header {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 16rpx;
+  margin-top: 56rpx;
+}
   
-  /* Alt Title/Title 6 */
-  
+
+.section-title{
   font-family: Poppins;
   font-style: normal;
   font-weight: bold;
   font-size: 18px;
   line-height: 24px;
-  /* identical to box height, or 133% */
-  
   letter-spacing: 0.01em;
-  
-  /* Wireframe/Grey 0 */
-  
   color: #333333;
+  padding-left: 8rpx;
 }
 
 .smallcategory{
-  /* Learn Section Header */
-
-
-width: 50px;
-height: 20px;
-left: 39px;
-top: 716px;
-
-/* Title/Title 6 */
-
 font-family: Poppins;
 font-style: normal;
-font-weight: 500;
-font-size: 18px;
-line-height: 20px;
-/* identical to box height, or 111% */
-
-
-/* Wireframe/Grey 0 */
-
+font-weight: 800;
+font-size: 16px;
+line-height: 50rpx;
+padding-left: 30rpx;
+padding-bottom: 8rpx;
 color: #333333;
 }
-
-.swapswap {
-  width: 142px;
-  height: 39px;
-  background: #111111;
-  border-radius: 20px;
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 16px;
-  color: white;
-  }
 
   .labellabel {
     font-family: 'Poppins';
@@ -172,22 +169,7 @@ color: #333333;
     padding: 0px 24rpx;
     width: fit-content;
 }
-.cardlabel {
-  font-family: 'Poppins';
-  background-color: #c4bbdd;
-  border-radius: 15px;
-  border: 1px solid #000000;
-  line-height: 28px;
-  font-size: 16px;
-  font-family: "Poppins";
-  width: fit-content;
-  line-height: 24px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  padding: 0px 24rpx;
-}
+
 
 .slide {
   font-size: medium;
@@ -202,7 +184,8 @@ color: #333333;
   right: 0%;
   top: 0%;
   bottom: 0%;
-  padding: 20rpx;
+  padding: 30rpx;
+  margin-bottom: 30rpx;
   background: #EFEFE6;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
@@ -213,3 +196,15 @@ color: #333333;
   height: 20rpx;
   /* background-color: rgba(237, 205, 171, 0.7); */
 }
+
+.swapswap {
+  width: 142px;
+  height: 39px;
+  background: #111111;
+  border-radius: 20px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  color: white;
+  }
