@@ -51,6 +51,23 @@ Page({
     this.setData({
       showView: (!this.data.showView)
     })
+    let requestrequesttable = new wx.BaaS.TableObject('slash_requests')
+    let requestID = app.globalData.globalRequestID
+    let requestswap = requestrequesttable.getWithoutData(requestID)
+    requestswap.set('confirmation', true)
+    requestswap.update().then(res => {
+      console.log(res)
+    })
+
+
   },
+
+
+  toProfilepage: function() {
+    wx.navigateTo({
+
+      url: '/pages/profile/profile',
+    })
+  }
 
 })
