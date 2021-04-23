@@ -123,12 +123,28 @@ Page({
   },
       
 
-  clickonskillexchange:function(){
-    wx.navigateTo({
-      url: 'pages/requestdetail/requestdetail',
-    }),
-    console.log("worksworks")
-  },
+  clickonskillexchangelearn:function(e){
+      app.globalData.globalSkillID = e.currentTarget.dataset.skill_id
+        wx.navigateTo({
+          url: '/pages/profileskill/profileskill',
+        })
+    },
+
+    clickonskillexchangeshare:function(e){
+      app.globalData.globalSkillID = e.currentTarget.dataset.skill_id
+      wx.navigateTo({
+        url: '/pages/profileskill/profileskill',
+      })
+    },
+
+    clickonskillexchangeiwant:function(e){
+      console.log("monica print e", e)
+      app.globalData.globalSkillID = e.currentTarget.dataset.skill_id.id
+      console.log("monica", app.globalData.globalSkillID)
+      wx.navigateTo({
+        url: '/pages/profileskill/profileskill',
+      })
+    },
 
   /**
    * Lifecycle function--Called when page hide

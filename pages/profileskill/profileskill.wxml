@@ -4,9 +4,7 @@
   <!-- <view class="card-picture">
     <image src="{{clickSkill.picture}}" mode="widthFix"></image>
   </view> -->
-    <view class="card-title">{{clickSkill.title_skills}}
-      <!-- <image src="../images/icon-heart.png" class="btnbtn"></image> -->
-    </view>
+    <view class="card-title">{{clickSkill.title_skills}}<image src="../images/icon-heart.png" class="btnbtn"></image></view>
     <view>
       <view class="space"></view>
       <view class="line"></view>
@@ -35,7 +33,6 @@
     </view>
 
     <view class="card-content">{{clickSkill.description_offer}}</view>
-    <button class="swapbutton" bindtap="swap">SWAP SKILLS!</button>
 
     <view>
       <view class="spacebig"></view>
@@ -44,14 +41,13 @@
     </view>
 
     <view class="card-user" >
-      <image src="{{userinfo.avatar}}" mode="widthFix"></image>
+      <image src="{{userinfo.avatarUrl}}" mode="widthFix"></image>
       <view class="usertag">
         <view class = "username">{{userinfo.nickname}}</view>
         <view class = "userbio">{{userinfo.bio}}</view>
       </view>
 
     </view>
-
     <view class="card-label">
       <view class = "userlabel" wx:for="{{userinfo.labels}}" wx:for-item="label">{{label}}</view>
     </view>

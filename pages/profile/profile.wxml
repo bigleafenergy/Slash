@@ -2,7 +2,7 @@
 <view class="spacingforbottom">
 <view class="background">
   <view>
-    <image src="{{currentUser.avatar}}" class="avatar">
+    <image src="{{currentUser.avatarUrl}}" class="avatar">
     </image>
     <view>
       <view class="userusernamename">{{currentUser.nickname}}</view>
@@ -15,7 +15,7 @@
   <view class="space"></view>
   <view>
     <text class="smallcategory">Share</text>
-    <view wx:for="{{shares}}" wx:for-item="skill" class="shares" bindtap="clickonskillexchange">
+    <view wx:for="{{shares}}" wx:for-item="skill" class="shares" bindtap="clickonskillexchangeshare" data-skill_id = "{{skill.id}}">
       <view class="cardcard">
         <view class="cardtitles" class="cardtitles">{{skill.title_skills}}</view>
         <view>{{skill.description_offer}}</view>
@@ -29,7 +29,7 @@
   <view class="space"></view>
   <view>
     <text class="smallcategory">Learn</text>
-    <view wx:for="{{learn}}" wx:for-item="learnlearn" bindtap="clickonskillexchange">
+    <view wx:for="{{learn}}" wx:for-item="learnlearn" bindtap="clickonskillexchangelearn" data-skill_id = "{{learnlearn.id}}">
       <view class="cardcard">      
         <view class="cardtitles">{{learnlearn.title_skills}}</view>
         <view>{{learnlearn.description_offer}}</view>
@@ -41,9 +41,9 @@
   </view>
   <view>-------</view>
   <view>
-    <text class="categorgies">Requests</text>
-      <view wx:for="{{irequestpost}}" wx:for-item="irequestthisbro" class="measking">
-        <view class="cardcard">
+    <text class="categorgies">Skills you requested</text>
+      <view wx:for="{{irequestpost}}" wx:for-item="irequestthisbro" class="measking" >
+        <view class="cardcard" bindtap="clickonskillexchangeiwant" data-skill_id = "{{irequestthisbro.skills_id}}">
           <view class="cardtitles">{{irequestthisbro.skills_id.title_skills}}</view>
           <view>{{irequestthisbro.skills_id.description_offer}}</view>
           <view class="cardlabel">{{irequestthisbro.skills_id.label}}</view>
@@ -53,13 +53,13 @@
   </view>
   <view>-------</view>
   <view>
-    <text class="categorgies">Requests</text>
+    <text class="categorgies">Requests for you</text>
     <view class="requests">
         <view wx:for="{{requested}}" wx:for-item="theyasking">
           <view class="cardcard">
             <view class="cardtitles">{{theyasking.skills_id.title_skills}}  
               <view>
-                <view><image src="{{theyasking.user_id.avatar}}" class="smallavatar"></image>
+                <view><image src="{{theyasking.user_id.avatarUrl}}" class="smallavatar"></image>
               </view>
                 <view class="cardlabel">{{theyasking.skills_id.label}}</view></view>
             </view>
