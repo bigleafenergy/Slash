@@ -1,0 +1,65 @@
+<!--pages/requestswap/requestswap.wxml-->
+<!-- <text>pages/requestswap/requestswap.wxml</text> -->
+<view class= "background">
+  <view class="card-title">{{request.skills_id.title_skills}}</view>
+  <view>
+    <view class="space"></view>
+    <view class="line"></view>
+    <view class="space"></view>
+  </view>
+
+  <view class="card-info">
+      <image src="../images/icon-clock.png"></image>
+      <text>{{request.skills_id.session_length}} </text> 
+    </view>
+
+    <view class="card-info">
+      <image src="../images/icon-map-pin.png"></image>
+      <text>{{request.skills_id.city}}</text> 
+    </view>
+
+    <view class="card-info">
+      <image src="../images/icon-calendar.png"></image>
+      <text>{{availableDay}}</text> 
+    </view>
+
+    <view>
+      <view class="space"></view>
+      <view class="line"></view>
+      <view class="space"></view>
+    </view>
+
+    <view class="card-content">{{request.skills_id.description_offer}}</view>
+    <!-- <button class="swapbutton" bindtap="swap">SWAP SKILLS!</button> -->
+
+    <view>
+      <view class="spacebig"></view>
+      <view class="line"></view>
+      <view class="spacebig"></view>
+    </view>
+
+    <view class="card-user" >
+      <image src="{{request.user_id.avatarUrl}}" mode="widthFix"></image>
+      <view class="usertag">
+        <view class = "username">{{request.user_id.nickname}}</view>
+        <view class = "userbio">{{request.user_id.bio}}</view>
+      </view>
+
+    </view>
+
+    <view class="card-label">
+      <view class = "userlabel" wx:for="{{request.user_id.labels}}" wx:for-item="label">{{label}}</view>
+    </view>
+
+    <view>
+      <view class="space"></view>
+      <view class="line"></view>
+      <view class="space"></view>
+    </view>
+    <button class="swapbutton1" bindtap="swap">Agree to Swap!</button>
+    <button class="swapbutton2 {{showView?'header_view_show':'header_view_hide'}}">WeChatID: {{request.user_id.contact}}</button>
+
+
+
+
+</view>
