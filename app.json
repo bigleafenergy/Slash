@@ -6,7 +6,8 @@
     "pages/profile/profile",
     "pages/skilldetail/skilldetail",
     "pages/requestSent/requestSent",
-    "pages/requestdetail/requestdetail"
+    "pages/requestdetail/requestdetail",
+    "pages/requestswap/requestswap"
   ],
   "tabBar": {
     "color": "#888888",

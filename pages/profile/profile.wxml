@@ -43,7 +43,7 @@
         </view>
       </view>
     <view class="learn-section">
-      <text class="smallcategory">Learn</text>
+      <text class="smallcategory">Share</text>
       <view wx:for="{{shares}}" wx:for-item="skill" class="shares" bindtap="clickonskillexchangeshare" data-skill_id = "{{skill.id}}">
         <view class="cardcard">
           <view class="cardtitles" class="cardtitles">{{skill.title_skills}}</view>
@@ -58,7 +58,7 @@
       </view>
     </view>
     <view class="share-section">
-        <text class="smallcategory">Share</text>
+        <text class="smallcategory">Learn</text>
         <view wx:for="{{learn}}" wx:for-item="learnlearn" bindtap="clickonskillexchangelearn" data-skill_id = "{{learnlearn.id}}">
           <view class="cardcard">      
             <view class="cardtitles">{{learnlearn.title_skills}}</view>
@@ -101,7 +101,7 @@
     </view>
 
     <view class="requests">
-        <view wx:for="{{requested}}" wx:for-item="theyasking">
+        <view wx:for="{{requested}}" wx:for-item="theyasking" bindtap="switchToSwapPage" data-request_id = "{{theyasking.id}}" >
           <view class="cardcard">
             <view class="cardtitles">{{theyasking.skills_id.title_skills}}  
               <view>
