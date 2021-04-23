@@ -1,18 +1,21 @@
 /* pages/profileskill/profileskill.wxss *//* pages/skilldetail/skilldetail.wxss */
 .background{
   background-color: #EFEFE6;
-  height: 100%;
+  min-height: 100vh;
 }
 
 .card-user {
   width: 100%;
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-items: space-between;
 }
+
 
 .card-user image {
   /* position: relative; */
-  width: 100px;
+  width: 200rpx;
   align-self: left;
   margin-left: 27px;
   /* margin-left: auto;
@@ -31,12 +34,12 @@
   /* top: 20px; */
   margin-left: 28px;
   width: 980px;
-
   font-family: Poppins;
   font-style: normal;
   font-weight: 500;
   font-size: 24px;
   line-height: 32px;
+  letter-spacing: 0.01em;
 }
 
 .btnbtn{
@@ -81,7 +84,7 @@
 
 .card-info {
   display: flex;
-  margin-top: 5rpx;
+  margin: 24rpx 0;
 }
 
 
@@ -95,14 +98,7 @@
   font-style: normal;
   font-weight: bold;
   font-size: 14px;
-  /* line-height: 24px; */
-
-  /* letter-spacing: 0.02em; */
-
-
   color: #333333;
-
-
 }
 
 .card-info image {
@@ -113,7 +109,7 @@
 
 .card-content {
   display: flex;
-  margin-top: 5rpx;
+  margin-top: 24rpx;
   margin-left: 45px;
   margin-right: 45px;
 
@@ -143,37 +139,33 @@
 
 }
 
+
+
 .usertag {
   display: flex;
   flex-direction: column;
 }
 
 .username {
-
-  margin-left: 10px;
-  display: flex;
   font-family: Poppins;
   font-style: normal;
   font-weight: bold;
   font-size: 18px;
   line-height: 24px;
-
   letter-spacing: 0.01em;
-
   color: #333333;
+  padding-left: 36rpx;
 }
 
 .userbio {
-  margin-left: 10px;
-  margin-top: 10px;
+  padding-left: 34rpx;
   font-family: Poppins;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
   line-height: 20px;
-
-
   color: #333333;
+  max-width: 425rpx;
 }
 
 .userlabel {

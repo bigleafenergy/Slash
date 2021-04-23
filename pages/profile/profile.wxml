@@ -1,59 +1,85 @@
 <!--pages/profile/profile.wxml-->
 <view class="spacingforbottom">
 <view class="background">
-  <view>
-    <image src="{{currentUser.avatarUrl}}" class="avatar">
-    </image>
-    <view>
-      <view class="userusernamename">{{currentUser.nickname}}</view>
-      <view class="biobio">{{allinfo[0].bio}}</view>
-      <view wx:for="{{allinfo[0].labels}}" wx:for-item="labellabellabel" class="labellabel">{{labellabellabel}}</view>
-  </view>
-  <view class="space"></view>
-  </view>
-  <text class="categorgies">Your Skill Exchange</text>
-  <view class="space"></view>
-  <view>
-    <text class="smallcategory">Share</text>
-    <view wx:for="{{shares}}" wx:for-item="skill" class="shares" bindtap="clickonskillexchangeshare" data-skill_id = "{{skill.id}}">
-      <view class="cardcard">
-        <view class="cardtitles" class="cardtitles">{{skill.title_skills}}</view>
-        <view>{{skill.description_offer}}</view>
-        <view>Session Length: {{skill.session_length}}</view>
-        <block wx:if="{{skill.availabletime[0]}}">Wee</block>
-        <view class="cardlabel">{{skill.label}}</view>
+ 
+    <view class="profile-card">
+      <view class="profile-text">
+        <image src="{{currentUser.avatarUrl}}" class="avatar"></image>
+        <view class="usertag">
+        <view class="userusernamename">{{currentUser.nickname}}</view>
+        <view class="biobio">{{allinfo[0].bio}}</view>
       </view>
-      <view class="space"></view>
+     </view>
+     <view class="label-flex">
+      <view wx:for="{{allinfo[0].labels}}" wx:for-item="labellabellabel" class="labellabel">{{labellabellabel}}</view>
     </view>
-  </view>
-  <view class="space"></view>
-  <view>
-    <text class="smallcategory">Learn</text>
-    <view wx:for="{{learn}}" wx:for-item="learnlearn" bindtap="clickonskillexchangelearn" data-skill_id = "{{learnlearn.id}}">
-      <view class="cardcard">      
-        <view class="cardtitles">{{learnlearn.title_skills}}</view>
-        <view>{{learnlearn.description_offer}}</view>
-        <view>Session Length: {{learnlearn.session_length}}</view>
-        <block wx:if="{{learnlearn.availabletime[0]}}">Wee</block>   
-        <view class="cardlabel">{{learnlearn.label}}</view>
-      </view> 
-      <view class="space"></view>
-  </view>
-  <view>-------</view>
-  <view>
-    <text class="categorgies">Skills you requested</text>
-      <view wx:for="{{irequestpost}}" wx:for-item="irequestthisbro" class="measking" >
-        <view class="cardcard" bindtap="clickonskillexchangeiwant" data-skill_id = "{{irequestthisbro.skills_id}}">
-          <view class="cardtitles">{{irequestthisbro.skills_id.title_skills}}</view>
-          <view>{{irequestthisbro.skills_id.description_offer}}</view>
-          <view class="cardlabel">{{irequestthisbro.skills_id.label}}</view>
+    </view>
+
+  <view class="excahnge-section">
+      <view class="section-header">
+        <image class= "section-image" src="/pages/images/exchange.svg"></image>
+        <view class="section-title">
+          Your Skill Exchange
+        </view>
+      </view>
+    <view class="learn-section">
+      <text class="smallcategory">Learn</text>
+      <view wx:for="{{shares}}" wx:for-item="skill" class="shares" bindtap="clickonskillexchangeshare" data-skill_id = "{{skill.id}}">
+        <view class="cardcard">
+          <view class="cardtitles" class="cardtitles">{{skill.title_skills}}</view>
+          <!-- <view>{{skill.description_offer}}</view> -->
+          <view class="card-bottom">
+              <view class="subtitle">Session Length: {{skill.session_length}}</view>
+              <block wx:if="{{skill.availabletime[0]}}">Wee</block>
+              <view class="cardlabel">{{skill.label}}</view>
+          </view>
         </view>
         <view class="space"></view>
+      </view>
     </view>
+    <view class="share-section">
+        <text class="smallcategory">Share</text>
+        <view wx:for="{{learn}}" wx:for-item="learnlearn" bindtap="clickonskillexchangelearn" data-skill_id = "{{learnlearn.id}}">
+          <view class="cardcard">      
+            <view class="cardtitles">{{learnlearn.title_skills}}</view>
+            <!-- <view>{{learnlearn.description_offer}}</view> -->
+              <view class="card-bottom">
+                <view class="subtitle">Session Length: {{learnlearn.session_length}}</view>
+                <block wx:if="{{learnlearn.availabletime[0]}}">Wee</block>   
+                <view class="cardlabel">{{learnlearn.label}}</view>
+              </view>
+          </view> 
+        </view>
+      </view>
   </view>
-  <view>-------</view>
-  <view>
-    <text class="categorgies">Requests for you</text>
+ 
+
+  <view class="outgoing-request-section">
+      <view class="section-header">
+        <image class= "section-image" src="/pages/images/heart.svg"></image>
+        <view class="section-title">
+          Skills you requested
+        </view>
+      </view>
+      <view wx:for="{{irequestpost}}" wx:for-item="irequestthisbro" class="measking" >
+          <view class="cardcard" bindtap="clickonskillexchangeiwant" data-skill_id = "{{irequestthisbro.skills_id}}">
+            <view class="cardtitles">{{irequestthisbro.skills_id.title_skills}}</view>
+            <!-- <view>{{irequestthisbro.skills_id.description_offer}}</view> -->
+            <view class="cardlabel">{{irequestthisbro.skills_id.label}}</view>
+          </view>
+      </view>
+  </view>
+   
+  
+  
+  <view class="incoming-request-section">
+    <view class="section-header">
+      <image class= "section-image" src="/pages/images/eye.svg"></image>
+      <view class="section-title">
+        Requests for you
+      </view>
+    </view>
+
     <view class="requests">
         <view wx:for="{{requested}}" wx:for-item="theyasking">
           <view class="cardcard">
@@ -68,7 +94,11 @@
         </view>
     </view>
   </view>
-</view>
+    
+
+
+
+  
 
 
 </view>

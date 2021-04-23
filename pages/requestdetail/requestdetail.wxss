@@ -82,7 +82,7 @@
 
 .card-info {
   display: flex;
-  margin-top: 5rpx;
+  margin: 24rpx 0;
 }
 
 
