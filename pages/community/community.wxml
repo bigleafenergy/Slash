@@ -22,18 +22,20 @@
     <view class="labels" wx:for="{{labels}}" wx:for-item="label" wx:if="{{!label.selected}}" bindtap="chooseLabel" data-name="{{label}}" data-index="{{index}}"> {{label.name}}
     </view>
 
-    <view class="space"></view>
+    <view class="space-main"></view>
 
     <view bindtap="switchToSignup" wx:if="{{labels[0].selected}}" wx:for="{{allSkills}}" wx:for-item="skillpost" data-skill_id= "{{skillpost.id}}">
         <view class="nav">
-            <view class="card-text">
-                <view class="card-title">{{skillpost.title_skills}}</view>
-                <view class="card-content1">Session Length: {{skillpost.session_length}}</view>
-                <view class="card-content2">Available Time: {{skillpost.dayArray}}</view>                 
-            </view>
-            <view class="card-avatar">
-                <image src="{{skillpost.userid.avatarUrl}}" mode="widthFix"></image>
-            </view>
+            <view class="card-flexbox">
+                <view class="card-text">
+                    <view class="card-title">{{skillpost.title_skills}}</view>
+                    <view class="card-content1">Session Length: {{skillpost.session_length}}</view>
+                    <view class="card-content2">Available Time: {{skillpost.dayArray}}</view>                 
+                </view>
+                <view class="card-avatar">
+                    <image src="{{skillpost.userid.avatarUrl}}" mode="widthFix"></image>
+                </view>
+            </view> 
         </view>
         <view class="space"></view>
     </view>

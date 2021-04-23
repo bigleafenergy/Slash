@@ -2,6 +2,7 @@
 .background{
   background-color: rgba(237, 205, 171, 0.7);
   min-height: 100vh;
+  padding: 0 20rpx;
   padding-bottom: 130rpx;
   /* margin-bottom: 500rpx; */
 }
@@ -10,13 +11,14 @@
   font-size: 24px;
   color: #000;
   font-weight: bold;
-  padding-top: 18rpx;
+  padding-top: 36rpx;
   margin-left: 10px;
   z-index: 100;
 }
 
 .subtitle {
   display: flex;
+  margin-bottom: 18rpx;
 }
 
 
@@ -26,9 +28,10 @@
   height: 125px;
   display: flex;
   background-color: rgb(253,253,253); */
-  margin-left: 10px;
-  margin-right: 10px;
-  height: 150px;
+  margin-left: 24rpx;
+  margin-right: 24rpx;
+  margin-inline: 8rpx;
+  height: fit-content;
   display: flex;
   flex-direction: row;
   /* padding: 20rpx; */
@@ -69,20 +72,35 @@
 
 } */
 
+.card-flexbox{
+  display: flex;
+  flex-direction: row;
+  align-items: space-between;
+  justify-content: space-between;
+}
+
 .card-avatar image {
   /* position: relative; */
   width: 88px;
-  /* align-self: center; */
-  margin-left: auto;
-  margin-right: 15px;
-  margin-top: 15px;
   border-radius: 50px;
+  margin-top: 30rpx;
+  margin-right: 30rpx;
+
+  /* align-self: center; */
+  /* margin-left: auto;
+  margin-right: 15px;
+  margin-top: 15px; */
+  
 }
 
 .card-text {
-  width: 260px;
+  display: flex;
+  flex-direction: column;
+  margin: 30rpx;
+  min-width: 428rpx;
+  /* width: 260px;
   height: 150x;
-  left: 95px;
+  left: 95px; */
 }
 
 .card-title {
@@ -93,53 +111,58 @@
   overflow: hidden;
   text-overflow: ellipsis;
   margin-top: 30rpx; */
-  padding-top: 10px;
-  padding-left: 20rpx;
   font-family: Poppins;
   font-style: normal;
-  font-weight: bold;
+  font-weight: 600;
   font-size: 20px;
   line-height: 24px;
-
+  min-height: 120rpx;
   color: #333333;
 }
 .card-content1 {
-  margin-top:20px;
+  font-family: 'Poppins';
+  color: #333333;
+  font-weight: 400;
+  font-size: 15px;
+  /* margin-top:20px;
   font-family: Poppins;
   font-style: normal;
   font-weight: bold;
   font-size: 14px;
   line-height: 24px;
-  /* identical to box height, or 171% */
   padding-top: 5rpx;
   padding-left: 20rpx;
-  letter-spacing: 0.02em;
-  
-  /* Wireframe/Grey 0 */
-  
-  color: #333333;
+  letter-spacing: 0.02em;  
+  color: #333333; */
 }
 
 .card-content2 {
+  font-family: 'Poppins';
+  color: #333333;
+  font-weight: 400;
+  font-size: 15px;
+
   /* margin-top:20px; */
-  font-family: Poppins;
+  /* font-family: Poppins;
   font-style: normal;
   font-weight: bold;
   font-size: 14px;
   line-height: 24px;
-  /* identical to box height, or 171% */
   padding-top: 5rpx;
   padding-left: 20rpx;
   letter-spacing: 0.02em;
-  
-  /* Wireframe/Grey 0 */
-  
-  color: #333333;
+  color: #333333; */
 }
 
 .space {
   width: 100%;
   height: 20rpx;
+  /* background-color: rgba(237, 205, 171, 0.7); */
+}
+
+.space-main {
+  width: 100%;
+  height: 48rpx;
   /* background-color: rgba(237, 205, 171, 0.7); */
 }
 
