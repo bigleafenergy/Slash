@@ -180,7 +180,7 @@ input {
 .primary-button {
   background: #111111;
   border-radius: 20px;
-  width: 300rpx;
+  width: 380rpx;
   height: 80rpx;
   color: #fff;
   font-family: "Poppins";
