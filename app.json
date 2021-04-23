@@ -6,17 +6,35 @@
     "pages/profile/profile",
     "pages/skilldetail/skilldetail",
     "pages/requestSent/requestSent",
-    "pages/requestdetail/requestdetail",
-    "custom-tab-bar/tabbar"
+    "pages/requestdetail/requestdetail"
   ],
+  "tabBar": {
+    "color": "#888888",
+    "selectedColor": "#000000",
+    "backgroundColor": "#ffffff",
+    "list": [{
+      "pagePath": "pages/community/community",
+      "text": "Explore",
+      "iconPath": "/pages/images/explore.png",
+      "selectedIconPath": "/pages/images/explore-selected.png"
+    },{
+      "pagePath": "pages/newskill/newskill",
+      "iconPath": "/pages/images/create.png",
+      "selectedIconPath": "/pages/images/create.png"
+    },{
+      "pagePath": "pages/profile/profile",
+      "text": "Profile",
+      "iconPath": "/pages/images/profile.png",
+      "selectedIconPath": "/pages/images/profile-selected.png"
+    }]
+  },
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#EFEFE6",
-    "navigationBarTitleText": "Weixin",
+    "navigationBarTitleText": "/Slash 斜杠",
     "navigationBarTextStyle":"black"
   },
   "usingComponents": {
-    "tabBar": "/custom-tab-bar/tabbar"
    },
   "plugins": {
     "sdkPlugin": {

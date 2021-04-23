@@ -56,7 +56,7 @@
         <view class="space"></view>
     </view>
 </view>
-<tabBar></tabBar>
+<!-- <tabBar></tabBar> -->
 <!-- </view> -->
 
 

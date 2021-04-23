@@ -6,7 +6,73 @@
   padding-top: 40rpx;
 }
 
+/* beginning of new profile styling */
 
+.card-user {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-items: space-between;
+}
+
+
+.card-user image {
+  /* position: relative; */
+  width: 200rpx;
+  align-self: left;
+  /* margin-left: 27px; */
+  /* margin-left: auto;
+  margin-right: auto; */
+  border-radius: 50px;
+}
+.usertag {
+  display: flex;
+  flex-direction: column;
+}
+
+.username {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0.01em;
+  color: #333333;
+  padding-left: 36rpx;
+}
+
+.userbio {
+  padding-left: 34rpx;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  color: #333333;
+  max-width: 425rpx;
+}
+.card-label {
+  /* margin-left: 48rpx; */
+  margin-top: 40rpx;
+  padding-bottom: 20rpx;
+}
+
+.userlabel {
+  font-family: 'Poppins';
+  background-color: #EFEFE6;
+  border-radius: 15px;
+  border: 1px solid #000000;
+  line-height: 28px;
+  font-size: 16px;
+  display: inline-flex;
+  padding: 0 16rpx;
+  margin-inline: 8rpx;
+  margin-top: 8rpx;
+  width: fit-content;
+}
+
+/* end of new profile styling */
 .spacingforbottom{
   background-color:rgba(237, 205, 171, 0.7);
 }
@@ -14,7 +80,7 @@
 .profile-card {
   display: flex;
   flex-direction: column;
-  padding: 22rpx;
+  /* padding: 22rpx; */
 }
 
 .profile-text {
@@ -25,8 +91,8 @@
 }
 
 .avatar {
-  width: 200rpx;
-  height: 200rpx;
+  width: 200rpx !important;
+  height: 200rpx !important;
   border-radius: 50%;
 }
 
@@ -35,30 +101,27 @@
   height: 100px;
   border-radius: 50%;
 }
-.usertag {
-  display: flex;
-  flex-direction: column;
-}
+
 
 .biobio {
-padding-left: 40rpx;
-font-family: Poppins;
-font-style: normal;
-font-weight: normal;
-font-size: 14px;
-line-height: 20px;
-color: #333333;
+  padding-left: 20rpx;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  color: #333333;
 }
 
 .userusernamename{
- font-family: Poppins;
-font-style: normal;
-font-weight: bold;
-font-size: 18px;
-line-height: 24px;
-letter-spacing: 0.01em;
-color: #333333;
-padding-left: 36rpx;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0.01em;
+  color: #333333;
+  padding-left: 16rpx;
 }
 
 label-flex{

@@ -30,7 +30,7 @@ Page({
   },
 
   switchToCommunity: function(e) {
-    wx.redirectTo({
+    wx.switchTab({
 
       url: '/pages/community/community',
     })

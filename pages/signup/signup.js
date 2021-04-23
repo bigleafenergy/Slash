@@ -45,7 +45,7 @@ Page({
     // )
   },
   toIndex(){
-    wx.redirectTo({
+    wx.switchTab({
       url: '/pages/community/community',
     })
   },
@@ -147,7 +147,7 @@ Page({
             data: true,
             key: 'hasUserInfo',
             success: ()=>{
-              wx.navigateTo({
+              wx.switchTab({
                 url: '/pages/community/community',
               })
             }
