@@ -2,7 +2,23 @@
 <view class="spacingforbottom">
 <view class="background">
  
-    <view class="profile-card">
+  <view class="card-user" >
+      <image src="{{currentUser.avatarUrl}}" mode="widthFix"></image>
+      <view class="usertag">
+        <view class = "username">{{currentUser.nickname}}</view>
+        <view class = "userbio">{{allinfo[0].bio}}</view>
+      </view>
+
+  </view>
+  <view class="card-label">
+      <view class = "userlabel" wx:for="{{allinfo[0].labels}}" wx:for-item="labellabellabel">{{labellabellabel}}</view>
+  </view>
+
+
+
+
+
+    <!-- <view class="profile-card">
       <view class="profile-text">
         <image src="{{currentUser.avatarUrl}}" class="avatar"></image>
         <view class="usertag">
@@ -13,7 +29,11 @@
      <view class="label-flex">
       <view wx:for="{{allinfo[0].labels}}" wx:for-item="labellabellabel" class="labellabel">{{labellabellabel}}</view>
     </view>
-    </view>
+    </view> -->
+
+
+
+
 
   <view class="excahnge-section">
       <view class="section-header">
@@ -104,4 +124,4 @@
 </view>
 </view>
 
-<tabBar></tabBar>
+<!-- <tabBar></tabBar> -->

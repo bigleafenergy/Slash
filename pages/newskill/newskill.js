@@ -105,7 +105,7 @@ Page({
       label: this.data.selectedLabel,
       session_length: this.data.selectedSessionLength,
       available_time: this.data.available_time,
-      learn: false,
+      learn: true,
     })
     console.log("checking", this.data.selectedLabels)
     newSkill.save().then(
@@ -115,7 +115,7 @@ Page({
           title: "Posted!",
           icon: 'none',
         })
-        wx.navigateTo({
+        wx.switchTab({
           url: '/pages/community/community',
         })
       },err=>{
@@ -138,7 +138,7 @@ Page({
       label: this.data.selectedLabel,
       session_length: this.data.selectedSessionLength,
       available_time: this.data.available_time,
-      learn: true,
+      learn: false,
     })
     console.log("checking", this.data.selectedLabels)
     newSkill.save().then(
@@ -148,7 +148,7 @@ Page({
           title: "Posted!",
           icon: 'none',
         })
-        wx.navigateTo({
+        wx.switchTab({
           url: '/pages/community/community',
         })
       },err=>{

@@ -32,8 +32,8 @@
   color: black;
   /* margin-top: 20px; */
   /* top: 20px; */
-  margin-left: 28px;
-  width: 980px;
+  margin: 0 56rpx;
+  /* width: 980px; */
   font-family: Poppins;
   font-style: normal;
   font-weight: 500;
