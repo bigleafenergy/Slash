@@ -11,7 +11,7 @@ Page({
     allSkills: [],
     skillsWithLabel: [],
     // learnlocal: false,
-    labels: [{name: "All", selected: true}, {name: "Photography", selected: false}, {name: "Music", selected: false}, {name: "Languages", selected: false}, {name: "Design", selected: false}, {name: "Coding", selected: false}, {name: "Writing", selected: false}, {name: "Fitness", selected: false}, {name: "Arts & Crafts", selected: false}, {name: "Coffee", selected: false}, {name: "Outdoor", selected: false}, {name: "Other", selected: false}],
+    labels: [{name: "All", selected: true}, {name: "Photography", selected: false}, {name: "Music", selected: false}, {name: "Languages", selected: false}, {name: "Design", selected: false}, {name: "Coding", selected: false}, {name: "Writing", selected: false}, {name: "Fitness", selected: false}, {name: "Arts & Crafts", selected: false}, {name: "Coffee", selected: false}, {name: "Outdoors", selected: false}, {name: "Other", selected: false}],
     share: 1,
 
   },
