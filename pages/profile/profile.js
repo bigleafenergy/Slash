@@ -140,7 +140,7 @@ Page({
         if (req.skills_id.userid === undefined) {
           return 
         }else if(req.skills_id.userid.id === self.data.currentUser.id){
-          equestedlocal.push(req)
+          requestedlocal.push(req)
         }
       })
       // console.log("requested", requested)
