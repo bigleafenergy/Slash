@@ -33,6 +33,7 @@ Page({
    */
   onShow: function () {
     const self = this
+    console.log("checking profile tab", self.data)
     wx.getStorage({
       key: 'userInfo',
       success: res =>{
@@ -46,15 +47,7 @@ Page({
             hasUserInfo: false
           })
         }
-      },
-      fail: (err)=>{
-        this.setData({
-          hasUserInfo: false
-        })
-      }
-    })
-    
-    let allinfotabletable = new wx.BaaS.TableObject('_userprofile')
+        let allinfotabletable = new wx.BaaS.TableObject('_userprofile')
     let query = new wx.BaaS.Query()
 
     console.log("allinfotable",allinfotabletable)
@@ -141,6 +134,15 @@ Page({
         })
       })
       
+      },
+      fail: (err)=>{
+        this.setData({
+          hasUserInfo: false
+        })
+      }
+    })
+    
+    
   },
       
 
