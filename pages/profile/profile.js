@@ -1,10 +1,7 @@
 // pages/profile/profile.js
 var app = getApp();
 
-
-
 Page({
-
 
   /**
    * Page initial data
@@ -17,37 +14,56 @@ Page({
     availablearray:[],
     irequestpost:[],
     requested: []
-
-    
   },
 
+  /**
+   * Lifecycle function--Called when page load
+   */
+  onLoad: function (options) {
 
+  },
 
-  
+  /**
+   * Lifecycle function--Called when page is initially rendered
+   */
+  onReady: function () {
 
-
- 
+  },
 
   /**
    * Lifecycle function--Called when page show
    */
   onShow: function () {
     const self = this
-    console.log("checking profile tab", self.data)
     wx.getStorage({
       key: 'userInfo',
       success: res =>{
         if(res.data.nickname){
-          this.setData({
+          self.setData({
             currentUser: res.data,
             hasUserInfo: false
           })
+          self.setupUser();
         }else{
           this.setData({
             hasUserInfo: false
           })
+          wx.redirectTo({
+            url: '/pages/signup/signup?showform=true',
+          })
         }
-        let allinfotabletable = new wx.BaaS.TableObject('_userprofile')
+      },
+      fail: (err)=>{
+        this.setData({
+          hasUserInfo: false
+        })
+      }
+    })
+  },
+
+  setupUser(){
+    const self = this
+    let allinfotabletable = new wx.BaaS.TableObject('_userprofile')
     let query = new wx.BaaS.Query()
 
     console.log("allinfotable",allinfotabletable)
@@ -78,105 +94,93 @@ Page({
         this.data.shares.forEach((element) => {
           
         });
-      })
-
-      let learnlearntable = new wx.BaaS.TableObject('slash_skills')
-      let query3 = new wx.BaaS.Query()
-
-      query3.compare('userid','=',this.data.currentUser.id)
-      query3.compare('learn','=', true)
-
-      learnlearntable.setQuery(query3).find().then(
-        (res) => {
-          this.setData({
-            learn: res.data.objects,
-          })
-          console.log("learnlearnlearn",this.data.learn)
-        },
-      )
-
-      let irequesttable = new wx.BaaS.TableObject('slash_requests')
-      let query4 = new wx.BaaS.Query()
-      let requestedlocal = []
-      
-      query4.compare('user_id','=',this.data.currentUser.id)
-      console.log("this.data.currentUser.id", this.data.currentUser.id)
-      irequesttable.setQuery(query4).expand('skills_id').find().then(
-        (res) => {
-          console.log("this.data.currentUser.id2", res)
-          this.setData({
-            irequestpost: res.data.objects,
-          })
-          console.log("irequestthis",this.data.irequestpost)
-        }, err=>{
-          console.log("error", err)
-        }
-      )
-
-
-
-      let requestrequesttable = new wx.BaaS.TableObject('slash_requests')
-
-      requestrequesttable.expand(['skills_id','user_id']).find().then((res) => {
-        console.log("print out expand res", res)    
-        console.log(getApp().globalData.userInfo)
-
-        res.data.objects.forEach((req)=>{
-          if (req.skills_id.userid === undefined) {
-            return 
-          }else if(req.skills_id.userid.id === self.data.currentUser.id){
-            requestedlocal.push(req)
-          }
-        })
-        // console.log("requested", requested)
-        this.setData({
-          requested: requestedlocal
-        })
-      })
-      
-      },
-      fail: (err)=>{
-        this.setData({
-          hasUserInfo: false
-        })
-      }
     })
+
+    let learnlearntable = new wx.BaaS.TableObject('slash_skills')
+    let query3 = new wx.BaaS.Query()
+
+    query3.compare('userid','=',this.data.currentUser.id)
+    query3.compare('learn','=', true)
+
+    learnlearntable.setQuery(query3).find().then(
+      (res) => {
+        this.setData({
+          learn: res.data.objects,
+        })
+        console.log("learnlearnlearn",this.data.learn)
+      },
+    )
+
+    let irequesttable = new wx.BaaS.TableObject('slash_requests')
+    let query4 = new wx.BaaS.Query()
+    let requestedlocal = []
     
-    
+    query4.compare('user_id','=',this.data.currentUser.id)
+    console.log("this.data.currentUser.id", this.data.currentUser.id)
+    irequesttable.setQuery(query4).expand('skills_id').find().then(
+      (res) => {
+        console.log("this.data.currentUser.id2", res)
+        this.setData({
+          irequestpost: res.data.objects,
+        })
+        console.log("irequestthis",this.data.irequestpost)
+      }, err=>{
+        console.log("error", err)
+      }
+    )
+
+    let requestrequesttable = new wx.BaaS.TableObject('slash_requests')
+
+    requestrequesttable.expand(['skills_id','user_id']).find().then((res) => {
+      console.log("print out expand res", res)    
+      console.log(getApp().globalData.userInfo)
+
+      res.data.objects.forEach((req)=>{
+        console.log()
+        if (req.skills_id.userid === undefined) {
+          return 
+        }else if(req.skills_id.userid.id === self.data.currentUser.id){
+          equestedlocal.push(req)
+        }
+      })
+      // console.log("requested", requested)
+      this.setData({
+        requested: requestedlocal
+      })
+    })
+
   },
-      
 
   clickonskillexchangelearn:function(e){
-      app.globalData.globalSkillID = e.currentTarget.dataset.skill_id
-        wx.navigateTo({
-          url: '/pages/profileskill/profileskill',
-        })
-    },
-
-    clickonskillexchangeshare:function(e){
-      app.globalData.globalSkillID = e.currentTarget.dataset.skill_id
+    app.globalData.globalSkillID = e.currentTarget.dataset.skill_id
       wx.navigateTo({
         url: '/pages/profileskill/profileskill',
       })
-    },
+  },
 
-    clickonskillexchangeiwant:function(e){
-      console.log("monica print e", e)
-      app.globalData.globalSkillID = e.currentTarget.dataset.skill_id.id
-      console.log("monica", app.globalData.globalSkillID)
-      wx.navigateTo({
-        url: '/pages/profileskill/profileskill',
-      })
-    },
+  clickonskillexchangeshare:function(e){
+    app.globalData.globalSkillID = e.currentTarget.dataset.skill_id
+    wx.navigateTo({
+      url: '/pages/profileskill/profileskill',
+    })
+  },
+
+  clickonskillexchangeiwant:function(e){
+    console.log("monica print e", e)
+    app.globalData.globalSkillID = e.currentTarget.dataset.skill_id.id
+    console.log("monica", app.globalData.globalSkillID)
+    wx.navigateTo({
+      url: '/pages/profileskill/profileskill',
+    })
+  },
 
 
-    switchToSwapPage: function(e) {
-      console.log("swappage switch", e)
-      app.globalData.globalRequestID = e.currentTarget.dataset.request_id
-      wx.navigateTo({
-        url: '/pages/requestswap/requestswap',
-      })
-    }
-
+  switchToSwapPage: function(e) {
+    console.log("swappage switch", e)
+    app.globalData.globalRequestID = e.currentTarget.dataset.request_id
+    wx.navigateTo({
+      url: '/pages/requestswap/requestswap',
+    })
+  }
 
 })
