@@ -57,7 +57,8 @@
       <view class="space"></view>
     </view>
     <button class="swapbutton1" bindtap="swap">Agree to Swap!</button>
-    <button class="swapbutton2 {{request.confirmation ?'header_view_show':'header_view_hide'}}" bindtap="copyContact">Contact: {{request.user_id.contact}}</button>
+
+    <button class="swapbutton2 {{request.confirmation? 'header_view_show':'header_view_hide'}}" bindtap="copyContact">Contact: {{request.user_id.contact}}</button>
 
 
 

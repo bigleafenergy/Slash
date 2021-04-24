@@ -56,7 +56,7 @@ Page({
     let requestswap = requestrequesttable.getWithoutData(requestID)
     requestswap.set('confirmation', true)
     requestswap.update().then(res => {
-      console.log(res)
+      this.onShow(this.options)
     })
 
 
