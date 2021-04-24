@@ -1,6 +1,6 @@
 /* pages/profile/profile.wxss */
 .background {
-  padding-bottom: 180rpx;
+  padding-bottom: 80rpx;
   margin-left: 40rpx;
   margin-right: 40rpx;
   padding-top: 40rpx;
