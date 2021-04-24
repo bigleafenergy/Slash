@@ -122,6 +122,7 @@ Page({
       label: this.data.selectedLabel,
       session_length: this.data.selectedSessionLength,
       available_time: this.data.available_time,
+      city: this.data.city,
       learn: true,
     })
     console.log("checking", this.data.selectedLabels)
@@ -155,6 +156,7 @@ Page({
       label: this.data.selectedLabel,
       session_length: this.data.selectedSessionLength,
       available_time: this.data.available_time,
+      city: this.data.city,
       learn: false,
     })
     console.log("checking", this.data.selectedLabels)
