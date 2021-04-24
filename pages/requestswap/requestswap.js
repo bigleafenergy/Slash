@@ -63,10 +63,9 @@ Page({
   },
 
 
-  toProfilepage: function() {
-    wx.navigateTo({
-
-      url: '/pages/profile/profile',
+  copyContact: function() {
+    wx.setClipboardData({
+      data: this.data.request.user_id.contact,
     })
   }
 
