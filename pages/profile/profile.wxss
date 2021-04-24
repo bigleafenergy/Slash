@@ -285,3 +285,19 @@ color: #333333;
   color: white;
   }
 
+  .swiper {
+    height: 450rpx;
+  }
+
+  .swiperitem {
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+    padding: 30rpx;
+    margin-bottom: 30rpx;
+    background: #EFEFE6;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+  }
+
