@@ -110,11 +110,14 @@
 .swapbutton2 {
   margin-left: 100px;
   margin-right: 100px;
-  margin-top: 35px;
+  margin-top: 5px;
+  border-color: #EFEFE6;
+  outline-color: #EFEFE6;
+  /* outline: none;  */
 
-  background: #111111;
+  background: #EFEFE6;
   border-radius: 20px;
-  color: white;
+  color: black;
   font-family: Poppins;
   font-style: normal;
   font-weight: 600;
