@@ -24,7 +24,7 @@
 
     <view class="space-main"></view>
 
-    <view bindtap="switchToSignup" wx:if="{{labels[0].selected}}" wx:for="{{allSkills}}" wx:for-item="skillpost" data-skill_id= "{{skillpost.id}}">
+    <view bindtap="switchToNextPage" wx:if="{{labels[0].selected}}" wx:for="{{allSkills}}" wx:for-item="skillpost" data-skill_id= "{{skillpost.id}}">
         <view class="nav">
             <view class="card-flexbox">
                 <view class="card-text">
@@ -42,7 +42,7 @@
 
 
 
-    <view bindtap="switchToSignup"  class = "cards" wx:for="{{skillsWithLabel}}" wx:for-item="skillpost" data-skill_id= "{{skillpost.id}}">
+    <view bindtap="switchToNextPage"  class = "cards" wx:for="{{skillsWithLabel}}" wx:for-item="skillpost" data-skill_id= "{{skillpost.id}}">
         <view class="nav">
             <view class="card-text">
                 <view class="card-title">{{skillpost.title_skills}}</view>

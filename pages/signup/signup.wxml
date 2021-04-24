@@ -39,7 +39,7 @@
             <input  bindinput="bindContactInput" placeholder="Others can add you with your permission"></input>
         </view>
         <view class="flex-display">
-          <button bindtap="submitUserProfile" class="primary-button"> <view>Join /Slash Now</view> </button>
+          <button bindtap="login" class="primary-button"> <view>Join /Slash Now</view> </button>
         </view>
     </view> 
   </block>

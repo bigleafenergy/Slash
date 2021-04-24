@@ -12,38 +12,29 @@ Page({
   },
 
   onLoad: function (options) {
-    wx.getStorage({
-      key: 'hasUserInfo',
-      success: res=>{
-        wx.redirectTo({
-          url: '/pages/community/community',
-        })
-      },
-      fail: res=>{
-        this.setData({
-          currentUser: wx.getStorageSync('userInfo')
-        })
-        console.log("showform", options)
-        if (options.showform == "true"){
-          this.setData({
-            showForm: true
-          })
+    if(options.showform === "true"){
+      this.setData({
+        showForm: true
+      })
+    }else{
+      wx.getStorage({
+        key: 'userInfo',
+        success: res=>{
+          if(res.data.nickname){
+            this.setData({
+              userInfo: res.data,
+              hasUserInfo: true
+            })
+          }else{
+            this.setData({
+              hasUserInfo: false,
+            })
+          }
         }
-      }
-    })
-
-    // let Labels = new wx.BaaS.TableObject('slash_labels')
-    // const self = this
-    // Labels.find().then(
-    //   (res) => {
-    //     console.log('labels', res.data.objects)
-    //     self.setData ({
-    //       labels: res.data.objects
-    //     })
-    //     console.log('page-data-labels', this.data.labels)
-    //   }
-    // )
+      })
+    }
   },
+
   toIndex(){
     wx.switchTab({
       url: '/pages/community/community',
@@ -111,37 +102,41 @@ Page({
     })
   },
 
-  submitUserProfile(){
+  login(){
     const self = this
-    wx.getUserProfile({
-      desc: "Get user info for login",
-      success: res =>{
-        
-      //   wx.BaaS.auth.updateUserInfo(res).then(user => {
-      //     // user 包含用户完整信息，详见下方描述
-      //     console.log("user profile", user)
-      //   }, err => {
-      //     // **err 有两种情况**：用户拒绝授权，HError 对象上会包含基本用户信息：id、openid、unionid；其他类型的错误，如网络断开、请求超时等，将返回 HError 对象（详情见下方注解）
-      // })
-        console.log("profile", res.userInfo)
-        let userProfile = res.userInfo
-        console.log('user profile check',userProfile)
-        const self = this
-        let userID = this.data.currentUser.id
+    const _getLoginCode = new Promise(resolve => {
+      wx.login({
+        success: res => resolve(res.code)
+      })
+    })
+
+    const _getUserProfile = new Promise(resolve => {
+      wx.getUserProfile({
+        desc: 'Get User Profile',
+        success: res => resolve(res)
+      })
+    })
+
+    Promise.all([_getLoginCode, _getUserProfile]).then(result => {
+      const [code, userProfile] = result
+      wx.BaaS.auth.updateUserInfo(userProfile, {code}).then(res => {
+        // user 包含用户完整信息，详见下方描述
+        console.log(res)
+        let userID = res.id
         let Users = new wx.BaaS.TableObject('_userprofile')
         let user = Users.getWithoutData(userID)
         console.log("userProfile.avatarUrl", userProfile.avatarUrl)
 
         user.set({
-          nickname: this.data.nickname,
-          labels: this.data.selectedLabels,
+          nickname: self.data.nickname,
+          labels: self.data.selectedLabels,
           avatar: userProfile.avatarUrl,
-          bio: this.data.bio,
-          contact: this.data.contact,
+          bio: self.data.bio,
+          contact: self.data.contact,
           avatarUrl: userProfile.avatarUrl
         })
-        user.update().then(
-          (res)=>{
+
+        user.update().then((res)=>{
           wx.setStorageSync('userInfo', res.data)
           wx.setStorage({
             data: true,
@@ -161,17 +156,19 @@ Page({
             console.log("err", err)
           }
         )
-        
-      }}
-    )
-
-    
- 
+      }, err => {
+        // **err 有两种情况**：用户拒绝授权，HError 对象上会包含基本用户信息：id、openid、unionid；其他类型的错误，如网络断开、请求超时等，将返回 HError 对象（详情见下方注解）
+        console.log("Login error", err)
+        wx.showToast({
+          icon: 'error',
+          title: 'Authorization fail',
+        })
+      })
+    })
   },
 
   onReady: function () {
   
   },
-
 
 })
