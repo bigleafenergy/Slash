@@ -50,7 +50,7 @@
                 <!-- <view class="card-content2">Available Time: {{skillpost.dayArray}}</view>                  -->
             </view>
             <view class="card-avatar">
-                <image src="{{skillpost.userid.avatarUrl}}" mode="widthFix"></image>
+                <image src="{{skillpost.userid.avatarUrl}}" mode="widthFix" ></image>
             </view>
         </view>
         <view class="space"></view>

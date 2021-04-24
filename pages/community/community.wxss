@@ -75,16 +75,20 @@
 .card-flexbox{
   display: flex;
   flex-direction: row;
-  align-items: space-between;
-  justify-content: space-between;
+  /* align-items: space-between; */
+  justify-items: space-between;
+}
+
+.card-avatar{
+  margin-top: 30rpx;
+  margin-right: 30rpx;
 }
 
 .card-avatar image {
   /* position: relative; */
-  width: 88px;
-  border-radius: 50px;
-  margin-top: 30rpx;
-  margin-right: 30rpx;
+  width: 140rpx;
+  border-radius: 50%;
+
 
   /* align-self: center; */
   /* margin-left: auto;
