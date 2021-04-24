@@ -3,7 +3,7 @@
 <view class="background">
  
   <view class="card-user" >
-      <image src="{{currentUser.avatarUrl}}" mode="widthFix"></image>
+      <image src="{{currentUser.avatar}}" mode="widthFix"></image>
       <view class="usertag">
         <view class = "username">{{currentUser.nickname}}</view>
         <view class = "userbio">{{allinfo[0].bio}}</view>
