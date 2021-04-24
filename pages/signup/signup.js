@@ -125,15 +125,13 @@ Page({
         let userID = res.id
         let Users = new wx.BaaS.TableObject('_userprofile')
         let user = Users.getWithoutData(userID)
-        console.log("userProfile.avatarUrl", userProfile.avatarUrl)
 
         user.set({
-          nickname: self.data.nickname,
+          nickname: res.nickname,
           labels: self.data.selectedLabels,
-          avatar: userProfile.avatarUrl,
+          avatar: res.avatar,
           bio: self.data.bio,
           contact: self.data.contact,
-          avatarUrl: userProfile.avatarUrl
         })
 
         user.update().then((res)=>{

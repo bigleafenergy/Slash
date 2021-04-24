@@ -43,7 +43,7 @@
     </view>
 
     <view class="card-user" >
-      <image src="{{userinfo.avatarUrl}}" mode="widthFix"></image>
+      <image src="{{userinfo.avatar}}" mode="widthFix"></image>
       <view class="usertag">
         <view class = "username">{{userinfo.nickname}}</view>
         <view class = "userbio">{{userinfo.bio}}</view>

@@ -15,26 +15,6 @@
   </view>
 
 
-
-
-
-    <!-- <view class="profile-card">
-      <view class="profile-text">
-        <image src="{{currentUser.avatarUrl}}" class="avatar"></image>
-        <view class="usertag">
-        <view class="userusernamename">{{currentUser.nickname}}</view>
-        <view class="biobio">{{allinfo[0].bio}}</view>
-      </view>
-     </view>
-     <view class="label-flex">
-      <view wx:for="{{allinfo[0].labels}}" wx:for-item="labellabellabel" class="labellabel">{{labellabellabel}}</view>
-    </view>
-    </view> -->
-
-
-
-
-
   <view class="excahnge-section">
       <view class="section-header">
         <image class= "section-image" src="/pages/images/exchange.svg"></image>
@@ -122,7 +102,7 @@
           <view class="cardcard">
             <view class="cardtitles">{{theyasking.skills_id.title_skills}}  
               <view class="incoming-request-card-bottom">
-                <view><image src="{{theyasking.user_id.avatarUrl}}" class="smallavatar"></image>
+                <view><image src="{{theyasking.user_id.avatar}}" class="smallavatar"></image>
                 </view>
                 <view class="cardlabel">{{theyasking.skills_id.label}}</view>
               </view>

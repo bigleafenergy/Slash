@@ -31,7 +31,24 @@ Page({
   onLoad: function (options) {
     this.setData ({
       currentUser: wx.getStorageSync('userInfo')
-      })
+    })
+    wx.getStorage({
+      key: 'userInfo',
+      success: res =>{
+        if(res.data.nickname){
+          this.setData({
+            hasUserInfo: true
+          })
+        }else{
+          this.setData({
+            hasUserInfo: false
+          })
+          wx.navigateTo({
+            url: '/pages/signup/signup?showform=true',
+          })
+        }
+      }
+    })
 
   },
 
