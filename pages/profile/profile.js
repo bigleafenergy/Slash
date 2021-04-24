@@ -1,7 +1,10 @@
 // pages/profile/profile.js
 var app = getApp();
 
+
+
 Page({
+
 
   /**
    * Page initial data
@@ -14,21 +17,16 @@ Page({
     availablearray:[],
     irequestpost:[],
     requested: []
+
+    
   },
 
-  /**
-   * Lifecycle function--Called when page load
-   */
-  onLoad: function (options) {
 
-  },
 
-  /**
-   * Lifecycle function--Called when page is initially rendered
-   */
-  onReady: function () {
+  
 
-  },
+
+ 
 
   /**
    * Lifecycle function--Called when page show
