@@ -1,6 +1,6 @@
 /* pages/profile/profile.wxss */
 .background {
-  padding-bottom: 180rpx;
+  padding-bottom: 60rpx;
   margin-left: 40rpx;
   margin-right: 40rpx;
   padding-top: 40rpx;
@@ -97,8 +97,9 @@
 }
 
 .smallavatar {
-  width: 100px;
-  height: 100px;
+  margin-top: 20rpx;
+  width: 100rpx;
+  height: 100rpx;
   border-radius: 50%;
 }
 
@@ -162,7 +163,18 @@ color: #333333;
   justify-content: space-between;
   align-items: center;
 }
-
+.right-align{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.incoming-request-card-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  align-content: bottom;
+}
 .subtitle{
   font-family: 'Poppins';
   color: #333333;
@@ -179,6 +191,7 @@ color: #333333;
   font-family: "Poppins";
   width: fit-content;
   line-height: 24px;
+  font-weight: 400;
   /* display: flex;
   flex-direction: row;
   align-items: center;

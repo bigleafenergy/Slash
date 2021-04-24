@@ -65,7 +65,7 @@
             <!-- <view>{{learnlearn.description_offer}}</view> -->
               <view class="card-bottom">
                 <view class="subtitle">Session Length: {{learnlearn.session_length}}</view>
-                <block wx:if="{{learnlearn.availabletime[0]}}">Wee</block>   
+                <!-- <block wx:if="{{learnlearn.availabletime[0]}}">Week</block>    -->
                 <view class="cardlabel">{{learnlearn.label}}</view>
               </view>
           </view> 
@@ -84,8 +84,13 @@
       <view wx:for="{{irequestpost}}" wx:for-item="irequestthisbro" class="measking" >
           <view class="cardcard" bindtap="clickonskillexchangeiwant" data-skill_id = "{{irequestthisbro.skills_id}}">
             <view class="cardtitles">{{irequestthisbro.skills_id.title_skills}}</view>
-            <!-- <view>{{irequestthisbro.skills_id.description_offer}}</view> -->
-            <view class="cardlabel">{{irequestthisbro.skills_id.label}}</view>
+
+            <view class="card-bottom">
+                <view class="subtitle">Session Length: {{irequestthisbro.skills_id.session_length}}</view>
+                     <!-- <view>{{irequestthisbro.skills_id.description_offer}}</view> -->
+                <view class="cardlabel">{{irequestthisbro.skills_id.label}}</view>
+              </view>
+
           </view>
       </view>
   </view>
@@ -104,10 +109,11 @@
         <view wx:for="{{requested}}" wx:for-item="theyasking" bindtap="switchToSwapPage" data-request_id = "{{theyasking.id}}" >
           <view class="cardcard">
             <view class="cardtitles">{{theyasking.skills_id.title_skills}}  
-              <view>
+              <view class="incoming-request-card-bottom">
                 <view><image src="{{theyasking.user_id.avatarUrl}}" class="smallavatar"></image>
+                </view>
+                <view class="cardlabel">{{theyasking.skills_id.label}}</view>
               </view>
-                <view class="cardlabel">{{theyasking.skills_id.label}}</view></view>
             </view>
           </view>
           <view class="space"></view>
