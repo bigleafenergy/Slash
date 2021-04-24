@@ -42,11 +42,11 @@
           Your Skill Exchange
         </view>
       </view>
-
-
     <view class="learn-section">
       <text class="smallcategory">Share</text>
+      <swiper>
       <view wx:for="{{shares}}" wx:for-item="skill" class="shares" bindtap="clickonskillexchangeshare" data-skill_id = "{{skill.id}}">
+        <swiper-item>
         <view class="cardcard">
           <view class="cardtitles" class="cardtitles">{{skill.title_skills}}</view>
           <!-- <view>{{skill.description_offer}}</view> -->
@@ -56,14 +56,16 @@
               <view class="cardlabel">{{skill.label}}</view>
           </view>
         </view>
+      </swiper-item>
         <view class="space"></view>
       </view>
+    </swiper>
     </view>
-
-
     <view class="share-section">
         <text class="smallcategory">Learn</text>
+        <swiper>
         <view wx:for="{{learn}}" wx:for-item="learnlearn" bindtap="clickonskillexchangelearn" data-skill_id = "{{learnlearn.id}}">
+          <swiper-item>
           <view class="cardcard">      
             <view class="cardtitles">{{learnlearn.title_skills}}</view>
             <!-- <view>{{learnlearn.description_offer}}</view> -->
@@ -73,7 +75,9 @@
                 <view class="cardlabel">{{learnlearn.label}}</view>
               </view>
           </view> 
+        </swiper-item>
         </view>
+      </swiper>
       </view>
   </view>
  
@@ -85,18 +89,20 @@
           Skills you requested
         </view>
       </view>
+      <swiper>
       <view wx:for="{{irequestpost}}" wx:for-item="irequestthisbro" class="measking" >
+        <swiper-item>
           <view class="cardcard" bindtap="clickonskillexchangeiwant" data-skill_id = "{{irequestthisbro.skills_id}}">
-            <view class="cardtitles">{{irequestthisbro.skills_id.title_skills}}</view>
-
-            <view class="card-bottom">
-                <view class="subtitle">Session Length: {{irequestthisbro.skills_id.session_length}}</view>
-                     <!-- <view>{{irequestthisbro.skills_id.description_offer}}</view> -->
-                <view class="cardlabel">{{irequestthisbro.skills_id.label}}</view>
-              </view>
-
+                <view class="cardtitles">{{irequestthisbro.skills_id.title_skills}}</view>
+                <view class="card-bottom">
+                    <view class="subtitle">Session Length: {{irequestthisbro.skills_id.session_length}}</view>
+                        <!-- <view>{{irequestthisbro.skills_id.description_offer}}</view> -->
+                    <view class="cardlabel">{{irequestthisbro.skills_id.label}}</view>
+                  </view>
           </view>
+        </swiper-item>
       </view>
+    </swiper>
   </view>
    
   
@@ -110,7 +116,9 @@
     </view>
 
     <view class="requests">
+      <swiper>
         <view wx:for="{{requested}}" wx:for-item="theyasking" bindtap="switchToSwapPage" data-request_id = "{{theyasking.id}}" >
+          <swiper-item>
           <view class="cardcard">
             <view class="cardtitles">{{theyasking.skills_id.title_skills}}  
               <view class="incoming-request-card-bottom">
@@ -119,12 +127,13 @@
                 <view class="cardlabel">{{theyasking.skills_id.label}}</view>
               </view>
             </view>
-          </view>
           <view class="space"></view>
         </view>
+      </swiper-item>
+        </view>
+      </swiper>
     </view>
   </view>
-
     
 
 
