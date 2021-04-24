@@ -57,7 +57,7 @@
       <view class="space"></view>
     </view>
     <button class="swapbutton1" bindtap="swap">Agree to Swap!</button>
-    <button class="swapbutton2 {{showView?'header_view_show':'header_view_hide'}}" bindtap="toProfilepage">WeChatID: {{request.user_id.contact}}</button>
+    <button class="swapbutton2 {{showView?'header_view_show':'header_view_hide'}}" bindtap="toProfilepage">Contact: {{request.user_id.contact}}</button>
 
 
 

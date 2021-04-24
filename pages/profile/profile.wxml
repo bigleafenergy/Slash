@@ -22,6 +22,8 @@
           Your Skill Exchange
         </view>
       </view>
+
+
     <view class="learn-section">
       <text class="smallcategory">Share</text>
       <view wx:for="{{shares}}" wx:for-item="skill" class="shares" bindtap="clickonskillexchangeshare" data-skill_id = "{{skill.id}}">
@@ -37,6 +39,8 @@
         <view class="space"></view>
       </view>
     </view>
+
+
     <view class="share-section">
         <text class="smallcategory">Learn</text>
         <view wx:for="{{learn}}" wx:for-item="learnlearn" bindtap="clickonskillexchangelearn" data-skill_id = "{{learnlearn.id}}">
@@ -94,6 +98,7 @@
         </view>
     </view>
   </view>
+
     
 
 
