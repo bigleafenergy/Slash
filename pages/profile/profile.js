@@ -48,7 +48,7 @@ Page({
           this.setData({
             hasUserInfo: false
           })
-          wx.redirectTo({
+          wx.navigateTo({
             url: '/pages/signup/signup?showform=true',
           })
         }
