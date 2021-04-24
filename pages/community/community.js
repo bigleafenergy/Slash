@@ -18,6 +18,21 @@ Page({
 
   onShow: function (options) {
     this.setAllSkillsTable()
+
+    wx.getStorage({
+      key: 'userInfo',
+      success: res =>{
+        if(res.data.nickname){
+          this.setData({
+            hasUserInfo: true
+          })
+        }else{
+          this.setData({
+            hasUserInfo: false
+          })
+        }
+      }
+    })
   },
 
   setAllSkillsTable() {
@@ -185,24 +200,21 @@ Page({
     })
   },
 
-  switchToSignup: function(e) {
+  switchToNextPage: function(e) {
     console.log("switchToSignupswitchToSignupswitchToSignup")
-    wx.getStorage({
-      key: 'hasUserInfo',
-      success: res=>{
-        console.log("success", res)
-        getApp().globalData.globalSkillID = e.currentTarget.dataset.skill_id
-        wx.navigateTo({
-          url: '/pages/skilldetail/skilldetail',
-        })
-      },
-      fail: res=>{
-        wx.navigateTo({
-          url: '/pages/signup/signup?showform=true',
-        })
-      }
-    })
+    console.log(this.data)
+    if (this.data.hasUserInfo){
+      console.log("gotoskill")
+      getApp().globalData.globalSkillID = e.currentTarget.dataset.skill_id
+      wx.navigateTo({
+        url: '/pages/skilldetail/skilldetail',
+      })
+    }else{
+      console.log("no userinfo ba ")
+      wx.navigateTo({
+        url: '/pages/signup/signup?showform=true',
+      })
+    }
   }
-
 
 })  

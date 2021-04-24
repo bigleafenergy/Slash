@@ -33,10 +33,26 @@ Page({
    */
   onShow: function () {
     const self = this
-    this.setData ({
-      currentUser: getApp().globalData.userInfo
+    wx.getStorage({
+      key: 'userInfo',
+      success: res =>{
+        if(res.data.nickname){
+          this.setData({
+            currentUser: res.data,
+            hasUserInfo: false
+          })
+        }else{
+          this.setData({
+            hasUserInfo: false
+          })
+        }
+      },
+      fail: (err)=>{
+        this.setData({
+          hasUserInfo: false
+        })
+      }
     })
-    console.log("current user",getApp().globalData.userInfo)
     
     let allinfotabletable = new wx.BaaS.TableObject('_userprofile')
     let query = new wx.BaaS.Query()
